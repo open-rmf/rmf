@@ -1,0 +1,37 @@
+repositories:
+  rmf/rmf_core:
+    type: git
+    url: https://github.com/osrf/rmf_core.git
+    version: master
+  rmf/rmf_schedule_visualizer:
+    type: git
+    url: https://github.com/osrf/rmf_schedule_visualizer.git
+    version: master
+  rmf/traffic_editor:
+    type: git
+    url: https://github.com/osrf/traffic_editor.git
+    version: master
+  rmf/traffic_editor_assets:
+    type: git
+    url: https://github.com/osrf/traffic_editor_assets.git
+    version: master
+  rmf/rmf_demos:
+    type: git
+    url: https://github.com/open-rmf/rmf_demos.git
+    version: main
+  rmf/rmf_visualization:
+    type: git
+    url: https://github.com/open-rmf/rmf_visualization.git
+    version: main
+  rmf/rmf_simulation:
+    type: git
+    url: https://github.com/open-rmf/rmf_simulation.git
+    version: main
+  thirdparty/ros_ign:
+    type: git
+    url: https://github.com/osrf/ros_ign.git
+    version: dashing
+  thirdparty/menge_core:
+    type: git
+    url: https://github.com/osrf/menge_core.git
+    version: master

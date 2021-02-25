@@ -1,2 +1,3 @@
-# rmf
-Root repository for the RMF software
+# RMF
+
+The OpenRMF platform for multi-fleet robot management.
