@@ -34,6 +34,7 @@ sudo apt update && sudo apt install \
   qt5-default \
   python3-shapely python3-yaml python3-requests \
   -y
+python3 -m pip install flask-socketio
 sudo apt-get install python3-colcon*
 ```
 
@@ -43,7 +44,7 @@ Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 ```bash
 mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
-wget https://raw.githubusercontent.com/open-rmf/rmf/master/rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
 vcs import src < rmf.repos
 ```
 
