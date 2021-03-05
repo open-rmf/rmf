@@ -23,6 +23,14 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_utils.git
     version: main
+  rmf/rmf_cmake_uncrustify:
+    type: git
+    url: https://github.com/open-rmf/rmf_cmake_uncrustify.git
+    version: main
+  rmf/ament_cmake_catch2:
+    type: git
+    url: https://github.com/open-rmf/ament_cmake_catch2.git
+    version: main
   rmf/rmf_schedule_visualizer:
     type: git
     url: https://github.com/osrf/rmf_schedule_visualizer.git
