@@ -3,13 +3,13 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
     version: main
-  rmf/rmf_core_msgs:
+  rmf/rmf_internal_msgs:
     type: git
-    url: https://github.com/open-rmf/rmf_core_msgs.git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
     version: main
-  rmf/rmf_core_ros2:
+  rmf/rmf_ros2:
     type: git
-    url: https://github.com/open-rmf/rmf_core_ros2.git
+    url: https://github.com/open-rmf/rmf_ros2.git
     version: main
   rmf/rmf_task:
     type: git
