@@ -1,8 +1,36 @@
 repositories:
-  rmf/rmf_core:
+  rmf/rmf_battery:
     type: git
-    url: https://github.com/osrf/rmf_core.git
-    version: master
+    url: https://github.com/open-rmf/rmf_battery.git
+    version: main
+  rmf/rmf_internal_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
+    version: main
+  rmf/rmf_ros2:
+    type: git
+    url: https://github.com/open-rmf/rmf_ros2.git
+    version: main
+  rmf/rmf_task:
+    type: git
+    url: https://github.com/open-rmf/rmf_task.git
+    version: main
+  rmf/rmf_traffic:
+    type: git
+    url: https://github.com/open-rmf/rmf_traffic.git
+    version: main
+  rmf/rmf_utils:
+    type: git
+    url: https://github.com/open-rmf/rmf_utils.git
+    version: main
+  rmf/rmf_cmake_uncrustify:
+    type: git
+    url: https://github.com/open-rmf/rmf_cmake_uncrustify.git
+    version: main
+  rmf/ament_cmake_catch2:
+    type: git
+    url: https://github.com/open-rmf/ament_cmake_catch2.git
+    version: main
   rmf/rmf_schedule_visualizer:
     type: git
     url: https://github.com/osrf/rmf_schedule_visualizer.git
