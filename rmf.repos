@@ -31,10 +31,14 @@ repositories:
     type: git
     url: https://github.com/open-rmf/ament_cmake_catch2.git
     version: main
-  rmf/rmf_schedule_visualizer:
+  rmf/rmf_visualization:
     type: git
-    url: https://github.com/osrf/rmf_schedule_visualizer.git
-    version: master
+    url: https://github.com/open-rmf/rmf_visualization.git
+    version: main
+  rmf/rmf_visualization_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_visualization_msgs.git
+    version: main
   rmf/traffic_editor:
     type: git
     url: https://github.com/osrf/traffic_editor.git
