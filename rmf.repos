@@ -39,17 +39,9 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_visualization_msgs.git
     version: main
-  rmf/traffic_editor:
+  rmf/rmf_building_map_msgs:
     type: git
-    url: https://github.com/osrf/traffic_editor.git
-    version: master
-  rmf/traffic_editor_assets:
-    type: git
-    url: https://github.com/osrf/traffic_editor_assets.git
-    version: master
-  rmf/rmf_demos:
-    type: git
-    url: https://github.com/open-rmf/rmf_demos.git
+    url: https://github.com/open-rmf/rmf_building_map_msgs.git
     version: main
   rmf/rmf_visualization:
     type: git
@@ -59,11 +51,19 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
     version: main
+  traffic_editor/rmf_traffic_editor:
+    type: git
+    url: https://github.com/open-rmf/rmf_traffic_editor.git
+    version: master
+  demonstrations/rmf_demos:
+    type: git
+    url: https://github.com/open-rmf/rmf_demos.git
+    version: main
   thirdparty/ros_ign:
     type: git
     url: https://github.com/osrf/ros_ign.git
     version: dashing
-  thirdparty/menge_core:
+  thirdparty/menge_vendor:
     type: git
-    url: https://github.com/osrf/menge_core.git
+    url: https://github.com/open-rmf/menge_vendor.git
     version: master
