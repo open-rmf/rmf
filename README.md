@@ -53,7 +53,6 @@ Ensure all ROS 2 prerequisites are fulfilled,
 cd ~/rmf_ws
 rosdep install --from-paths src --ignore-src --rosdistro foxy -yr
 ```
-The models required for each of the demo worlds will be automatically downloaded into ~/.gazebo/models from Ignition Fuel when building the package rmf_demo_maps. If you notice something wrong with the models in the simulation, your ~/.gazebo/models path might contain deprecated models not from Fuel. An easy way to solve this is to remove all models except for sun and ground_plane from ~/.gazebo/models, and perform a clean rebuild of the package rmf_demo_maps.
 
 ## Compiling Instructions
 
@@ -67,6 +66,7 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
+> The models required for each of the demo worlds will be automatically downloaded into `~/.gazebo/models` from Ignition Fuel when building the package `rmf_demo_maps`. If you notice something wrong with the models in the simulation, your `~/.gazebo/models` path might contain deprecated models not from Fuel. An easy way to solve this is to remove all models except for `sun` and `ground_plane` from `~/.gazebo/model`s, and perform a clean rebuild of the package `rmf_demo_maps`.
 
 ## Run RMF Demos
 
