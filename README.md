@@ -32,7 +32,7 @@ Install all non-ROS dependencies of RMF packages,
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   qt5-default \
-  python3-shapely python3-yaml python3-requests \
+  python3-shapely python3-yaml python3-requests python3-flask-cors \
   -y
 python3 -m pip install flask-socketio
 sudo apt-get install python3-colcon*
@@ -67,3 +67,8 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
+
+## Run RMF Demos
+
+Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/)
+
