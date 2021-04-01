@@ -17,6 +17,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/rmf
+          repository: ${{ github.repository }}/rmf_demos
           tags: latest
 
