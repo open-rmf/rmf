@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ] # TODO: remove this before the first merge    
+    branches: [ main ] # TODO: remove this before the first merge    
 jobs:
   build-docker-images:
     name: Push Docker image to GitHub Packages
