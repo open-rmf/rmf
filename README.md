@@ -77,8 +77,8 @@ Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/e
 
 Pull docker image from `opern-rm/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 ```bash
-docker pull docker.pkg.github.com/open-rmf/rmf/rmf:latest
-docker tag docker.pkg.github.com/open-rmf/rmf/rmf:latest rmf:latest
+docker pull docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest
+docker tag docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest rmf:latest
 ```
 
 Run it!
@@ -89,6 +89,6 @@ This will run `rmf_demos` in headless mode. Open `localhost:5000` with a browser
 
 To run rmf_demos in “non-headless” graphical form (gazebo, rviz), run the same docker image with [rocker](https://github.com/osrf/rocker).
 ```bash
-rocker --x11 --network host rmf:v1 "ros2 launch rmf_demos office.launch.xml"
+rocker --x11 --network host rmf:latest "ros2 launch rmf_demos office.launch.xml"
 ```
 
