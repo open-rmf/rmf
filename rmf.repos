@@ -54,7 +54,7 @@ repositories:
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
-    version: master
+    version: main
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
