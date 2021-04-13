@@ -87,8 +87,5 @@ docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 l
 ```
 This will run `rmf_demos` in headless mode. Open `localhost:5000` with a browser to start a task.
 
-To run rmf_demos in “non-headless” graphical form (gazebo, rviz), run the same docker image with [rocker](https://github.com/osrf/rocker).
-```bash
-rocker --x11 --network host rmf:latest "ros2 launch rmf_demos office.launch.xml"
-```
+(Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
