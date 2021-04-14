@@ -72,3 +72,20 @@ As a result, the first build can take a very long time depending on the server l
 
 Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/)
 
+### Docker Containers
+Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
+
+Pull docker image from `opern-rm/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
+```bash
+docker pull docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest
+docker tag docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest rmf:latest
+```
+
+Run it!
+```bash
+docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos office.launch.xml headless:=1"
+```
+This will run `rmf_demos` in headless mode. Open `localhost:5000` with a browser to start a task.
+
+(Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
+
