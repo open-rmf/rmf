@@ -10,11 +10,6 @@ RUN apt-get update \
     curl \
     git \
     python3-colcon-common-extensions \
-    python3-requests \
-    python3-shapely \
-    python3-vcstool \
-    python3-yaml \
-    python3-flask-cors \
     qt5-default \
     wget \
     python3-pip \
@@ -40,7 +35,7 @@ RUN wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos \
     && rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -yr \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update \
-    && apt-get install -y ignition-dome \
+    && apt-get install -y ignition-edifice \
     && rm -rf /var/lib/apt/lists/*
 
 #-----------------
