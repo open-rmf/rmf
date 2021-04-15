@@ -10,6 +10,7 @@ RUN apt-get update \
     curl \
     git \
     python3-colcon-common-extensions \
+    python3-vcstool \
     qt5-default \
     wget \
     python3-pip \
