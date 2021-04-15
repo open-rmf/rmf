@@ -1,5 +1,7 @@
 # RMF
 
+![](https://github.com/open-rmf/rmf/workflows/main/badge.svg)
+
 The OpenRMF platform for multi-fleet robot management.
 
 ---
@@ -32,7 +34,7 @@ Install all non-ROS dependencies of RMF packages,
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   qt5-default \
-  python3-shapely python3-yaml python3-requests python3-flask-cors \
+  ignition-edifice \
   -y
 python3 -m pip install flask-socketio
 sudo apt-get install python3-colcon*
