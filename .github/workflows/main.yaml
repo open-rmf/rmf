@@ -1,12 +1,14 @@
-name: Docker Image CI
-
+name: build
 on:
   push:
-    branches: [ main ]  
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build-docker-images:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - name: build rmf image and push to gh registry
@@ -17,4 +19,3 @@ jobs:
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/rmf_demos
           tags: latest
-
