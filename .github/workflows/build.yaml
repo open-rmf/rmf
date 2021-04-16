@@ -1,8 +1,9 @@
-name: Docker Image CI
-
+name: build
 on:
   push:
-    branches: [ main ]  
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build-docker-images:
     name: Push Docker image to GitHub Packages
@@ -16,5 +17,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/rmf_demos
+          push: ${{ github.event_name == 'push' }} # update registry only during push to main
           tags: latest
-
