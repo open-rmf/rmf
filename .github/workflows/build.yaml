@@ -8,7 +8,6 @@ jobs:
   build-docker-images:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: build rmf image and push to gh registry
@@ -18,4 +17,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/rmf_demos
+          push: ${{ github.event_name == 'push' }} # update registry only during push to main
           tags: latest
