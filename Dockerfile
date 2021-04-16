@@ -28,8 +28,10 @@ RUN mkdir $HOME/rmf_demos_ws
 WORKDIR $HOME/rmf_demos_ws
 RUN mkdir src
 RUN rosdep update --rosdistro $ROS_DISTRO
-RUN wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos \
-    && vcs import src < rmf.repos \
+
+# This replaces: wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
+COPY rmf.repos rmf.repos
+RUN vcs import src < rmf.repos \
     && apt-get update \
     && apt-get upgrade -y \
     && rosdep update \
