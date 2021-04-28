@@ -92,3 +92,10 @@ This will run `rmf_demos` in headless mode. Open `localhost:5000` with a browser
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
+## Roadmap
+
+A near-term roadmap of the entire RMF project (including and beyond `rmf_core`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
+
+## Integrating with RMF
+
+Instructions on how to integrate your system with RMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
