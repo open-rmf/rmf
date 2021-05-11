@@ -1,0 +1,65 @@
+name: build
+on:
+  schedule:
+    - cron '* 8 * * *'
+jobs:
+  build_and_test:
+    name: Nightly build and test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: deps
+        uses: ros-tooling/setup-ros@v0.1
+        with:
+          required-ros-distributions: foxy
+      - name: build
+        uses: ros-tooling/action-ros-ci@v0.2
+        with:
+          target-ros2-distro: foxy
+          # build all packages listed in the meta package
+          package-name: |
+            rmf_utils
+            rmf_traffic
+            rmf_task
+            rmf_battery
+            rmf_fleet_adapter
+            rmf_fleet_adapter_python
+            rmf_task_ros2
+            rmf_traffic_ros2
+            rmf_visualization
+            rmf_visualization_building_systems
+            rmf_visualization_fleet_states
+            rmf_visualization_rviz2_plugins
+            rmf_visualization_schedule
+            rmf_building_sim_common
+            rmf_building_sim_gazebo_plugins
+            rmf_building_sim_ignition_plugins
+            rmf_robot_sim_common
+            rmf_robot_sim_gazebo_plugins
+            rmf_robot_sim_ignition_plugins
+            rmf_building_map_tools
+            rmf_traffic_editor
+            rmf_traffic_editor_assets
+            test_maps
+            rmf_demos
+            rmf_demos_assets
+            rmf_demos_dashboard_resources
+            rmf_demos_maps
+            rmf_demos_panel
+            rmf_demos_tasks
+          vcs-repo-file-url: |
+            https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
+          colcon-defaults: |
+            {
+              "build": {
+                "mixin": ["coverage-gcc"]
+              }
+            }
+          colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          files: ros_ws/lcov/total_coverage.info
+          flags: tests
+          name: lean_and_mean_codecov_bot
+
+
