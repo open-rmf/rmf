@@ -2,9 +2,10 @@ name: nightly
 on:
   push:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
   schedule:
-    - cron '* 8 * * *'
+    - cron '1 8 * * *'
 jobs:
   build_and_test:
     name: Nightly build and test
