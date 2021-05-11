@@ -6,6 +6,7 @@ on:
       - main
   schedule:
     - cron '1 8 * * *'
+
 jobs:
   build_and_test:
     name: Nightly build and test
