@@ -1,5 +1,9 @@
-name: build
+name: nightly
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron '* 8 * * *'
 jobs:
@@ -55,11 +59,16 @@ jobs:
               }
             }
           colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+      - name: Upload build logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: colcon-build-logs
+          path: ${{ steps.action_ros_ci_step.outputs.ros-workspace-directory-name }}/log
+        if: always()
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           files: ros_ws/lcov/total_coverage.info
           flags: tests
           name: lean_and_mean_codecov_bot
-
 
