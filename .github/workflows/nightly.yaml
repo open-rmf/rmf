@@ -2,7 +2,7 @@ name: nightly
 on: 
   push:
   schedule:
-    - cron '1 8 * * *'
+    - cron: '1 8 * * *'
 
 jobs:
   build_and_test:
