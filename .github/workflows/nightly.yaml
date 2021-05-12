@@ -1,9 +1,6 @@
 name: nightly
-on:
+on: 
   push:
-  pull_request:
-    branches:
-      - main
   schedule:
     - cron '1 8 * * *'
 
