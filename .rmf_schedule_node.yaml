@@ -1,0 +1,30 @@
+- operation: Add
+  participant_description:
+    name: tinyRobot1
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: "\x00"
+      vicinity:
+        type: Circle
+        index: "\x01"
+      shape_context:
+        - 0.3
+        - 1
+- operation: Add
+  participant_description:
+    name: tinyRobot2
+    group: tinyRobot
+    responsiveness: Responsive
+    profile:
+      footprint:
+        type: Circle
+        index: "\x00"
+      vicinity:
+        type: Circle
+        index: "\x01"
+      shape_context:
+        - 0.3
+        - 1
