@@ -15,8 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       # Merge to main/nightly, build image as: rmf_demos:latest
       # Open PR, build image as: rmf_demos:test
-      - name: build rmf image and push to gh registry, default tag latest
-        if: ${{ github.event_name == 'push' }}
+      - name: build rmf image with ${{ github.event_name == 'pull_request' && 'test' || 'latest' }} tag
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
@@ -31,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       # Will use tag test if a open pr, for main, use latest
-      image: docker.pkg.github.com/tanyouliang95/rmf/rmf_demos:${{ github.event_name == 'pull_request' && 'test' || 'latest' }}
+      image: docker.pkg.github.com/open-rmf/rmf/rmf_demos:${{ github.event_name == 'pull_request' && 'test' || 'latest' }}
       credentials:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
