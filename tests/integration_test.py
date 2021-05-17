@@ -21,13 +21,14 @@ import signal
 import requests
 import time
 import json
+from functools import partial
 
 api_server_url = 'http://localhost:8080/'
+print = partial(print, flush=True)
 
 office_tasks = [
     {"task_type": "Loop", "start_time": 0, "description":
      {"start_name": "coe", "finish_name": "supplies", "num_loops": 1}},
-    # TODO: Fix delivery not working
     {"task_type": "Delivery", "start_time": 0, "description":
      {"pickup_place_name": "pantry",
       "pickup_dispenser": "coke_dispenser",
@@ -88,6 +89,9 @@ class RMFSenarioTest:
         launch_cmd = (f"ros2 launch rmf_demos {world_name}.launch.xml"
                       " headless:=1")
         print(f" Initialize command [{launch_cmd}]")
+
+        # Note: uncomment stdout and stderr in subprocess to hide printouts
+        # during local test.
         self.proc1 = subprocess.Popen(launch_cmd,
                                     #   stdout=subprocess.DEVNULL,
                                       stderr=subprocess.DEVNULL,
@@ -136,18 +140,21 @@ class RMFSenarioTest:
 
     def stop(self):
         # Send the signal to all the process groups in gazebo launch
-        os.killpg(os.getpgid(self.proc1.pid), signal.SIGTERM)
-        self.proc2.kill()
-        self.proc1.poll()
-        self.proc2.poll()
+        try:
+            os.killpg(os.getpgid(self.proc1.pid), signal.SIGTERM)
+            self.proc2.kill()
+        except Exception:
+            pass
 
     def start(
             self,
             task_requests: list,
-            timeout_sec: int):
+            timeout_sec: int,
+            cancel_tasks=[]) -> bool:
         """
         This will start the intergration test by sending multiple task
-        requests to rmf. Return True if all tasks passed, else false.
+        requests to rmf. Optional arg to provide cancel tasks.
+        Return True if all tasks passed, else false.
 
         TODO: should use ros_time as timeout
         """
@@ -162,6 +169,21 @@ class RMFSenarioTest:
             if (r.json == ""):
                 print("Task Submission failed!", r.json())
                 return False
+
+        # Cancel a submitted task
+        if (len(cancel_tasks) != 0):
+            print(f"Cancel a submitted task: {cancel_tasks}")
+            for id in cancel_tasks:
+                print(" - cancel a task: ", id)
+                r = requests.post(api_server_url + 'cancel_task',
+                                  json={"task_id": id})
+                time.sleep(1)
+                if (r.status_code != 200):
+                    print("Failed to connect api-server: not 200")
+                    return False
+                if (r.json == ""):
+                    print("Cancel failed!", r.json())
+                    return False
 
         # Periodically Checks the tasks
         start = time.time()
@@ -180,12 +202,18 @@ class RMFSenarioTest:
                       f"| state: {task['state']} ")
                 if (task['state'] == 'Completed'):
                     success_count += 1
-                if (task['state'] == 'Failed'):
+                elif (task['state'] == 'Failed'):
                     return False
             print("------------"*5)
-            if success_count == len(task_requests):
-                print(f"[{self.world_name}] All {success_count} Tasks Passed")
+
+            # check if all submited tasks, substract canceled tasks
+            # are all successfully completed
+            if success_count == (len(task_requests) - len(cancel_tasks)):
+                print(f"[{self.world_name}] Done \n"
+                      f"All {success_count} Tasks Passed, "
+                      f"Canceled {cancel_tasks}")
                 return True
+
         return False
 
 
@@ -204,10 +232,12 @@ def main(args=None):
     del office
 
     if not success:
-        raise RuntimeError
+        raise RuntimeError("requested tasks in office are not fully completed")
 
-    # ###########################################################################
-    # # Test Senario 2: Airport World with 3 requests
+    time.sleep(5)  # ensures previous pids was fully tore down
+
+    ###########################################################################
+    # Test Senario 2: Airport World with 3 requests
 
     airport = RMFSenarioTest("airport_terminal", 11)
     success = airport.start(airport_terminal_tasks, 250)
@@ -215,18 +245,23 @@ def main(args=None):
     del airport
 
     if not success:
-        raise RuntimeError
+        raise RuntimeError(
+            "requested tasks in airport are not fully completed")
 
-    # ###########################################################################
-    # # Test Senario 3: Clinic World with 4 requests
+    time.sleep(5)  # ensures pids was fully tore down
+
+    ###########################################################################
+    # Test Senario 3: Clinic World with 4 requests
 
     clinic = RMFSenarioTest("clinic", 4)
-    success = clinic.start(clinic_tasks, 600)
+    # Loop2 is chosen as a cancel tasks because currently rmf can only cancel
+    # queued task. Loop2 will be queued under deliveryRobot_1
+    success = clinic.start(clinic_tasks, 650, cancel_tasks=["Loop2"])
     clinic.stop()
     del clinic
 
     if not success:
-        raise RuntimeError
+        raise RuntimeError("requested tasks in clinic are not fully completed")
 
     print("====================== Successfully End All ======================")
 

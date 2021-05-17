@@ -4,9 +4,9 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  # schedule:
-  #   # 2am SGT
-  #   - cron: '0 18 * * *'
+  schedule:
+     # 4pm, 2am SGT
+    - cron: '0 8,18 * * *'
 jobs:
   build-docker-image:
     name: build-docker-image
@@ -47,3 +47,4 @@ jobs:
         echo "Start Integration Test"
         python3 rmf/tests/integration_test.py
         echo "Finish Integration Test"
+
