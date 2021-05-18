@@ -54,6 +54,9 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
+  demonstrations/rmf_demos:
+    type: git
+    url: https://github.com/open-rmf/rmf_gym.git
     version: main
   thirdparty/ros_ign:
     type: git
