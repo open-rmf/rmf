@@ -93,7 +93,7 @@ class RMFSenarioTest:
         # Note: uncomment stdout and stderr in subprocess to hide printouts
         # during local test.
         self.proc1 = subprocess.Popen(launch_cmd,
-                                    #   stdout=subprocess.DEVNULL,
+                                      stdout=subprocess.DEVNULL,
                                       stderr=subprocess.DEVNULL,
                                       shell=True, preexec_fn=os.setsid)
 
@@ -231,8 +231,7 @@ def main(args=None):
     office.stop()
     del office
 
-    if not success:
-        raise RuntimeError("requested tasks in office are not fully completed")
+    assert success, "requested tasks in office are not fully completed"
 
     time.sleep(5)  # ensures previous pids was fully tore down
 
@@ -244,9 +243,7 @@ def main(args=None):
     airport.stop()
     del airport
 
-    if not success:
-        raise RuntimeError(
-            "requested tasks in airport are not fully completed")
+    assert success, "requested tasks in airport are not fully completed"
 
     time.sleep(5)  # ensures pids was fully tore down
 
@@ -260,8 +257,7 @@ def main(args=None):
     clinic.stop()
     del clinic
 
-    if not success:
-        raise RuntimeError("requested tasks in clinic are not fully completed")
+    assert success, "requested tasks in clinic are not fully completed"
 
     print("====================== Successfully End All ======================")
 
