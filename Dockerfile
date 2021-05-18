@@ -14,6 +14,7 @@ RUN apt-get update \
     qt5-default \
     wget \
     python3-pip \
+    ros-foxy-rmw-cyclonedds-cpp \
   && pip3 install flask-socketio \
   && rm -rf /var/lib/apt/lists/*
 
@@ -67,7 +68,9 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 
 # cleanup
 RUN rm -rf build devel src \
-  && sed -i '$isource "/rmf_demos_ws/install/setup.bash"' /ros_entrypoint.sh
+  && sed -i '$isource /rmf_demos_ws/install/setup.bash' /ros_entrypoint.sh \
+  && sed -i '$iexport RMW_IMPLEMENTATION=rmw_cyclonedds_cpp' /ros_entrypoint.sh
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
+

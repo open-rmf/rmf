@@ -4,18 +4,47 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+     # 4pm, 2am SGT
+    - cron: '0 8,18 * * *'
 jobs:
-  build-docker-images:
-    name: Push Docker image to GitHub Packages
+  build-docker-image:
+    name: build-docker-image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: build rmf image and push to gh registry
+      # Merge to main/nightly, build image as: rmf_demos:latest
+      # Open PR, build image as: rmf_demos:test
+      - name: build rmf image with ${{ github.event_name == 'pull_request' && 'test' || 'latest' }} tag
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/rmf_demos
-          push: ${{ github.event_name == 'push' }} # update registry only during push to main
-          tags: latest
+          push: true
+          tags: ${{ github.event_name == 'pull_request' && 'test' || 'latest' }}
+  e2e-test:
+    name: rmf-test-senarios
+    needs: build-docker-image
+    runs-on: ubuntu-latest
+    container:
+      # Will use tag test if a open pr, for main, use latest
+      image: docker.pkg.github.com/open-rmf/rmf/rmf_demos:${{ github.event_name == 'pull_request' && 'test' || 'latest' }}
+      credentials:
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        path: rmf/
+    - name: run-tests
+      shell: bash
+      run: |
+        source /ros_entrypoint.sh
+        export HOME=/root         # this is crucial for setting a correct path to .gazebo/models
+        echo "Start Integration Test"
+        python3 rmf/tests/integration_test.py
+        echo "Finish Integration Test"
+
