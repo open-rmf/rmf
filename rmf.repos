@@ -1,8 +1,8 @@
 repositories:
   rmf-web:
     type: git
-    url: https://github.com/open-rmf/rmf-web
-    version:  main
+    url: https://github.com/matiasbavera/romi-bashboard.git
+    version: fix/addReportingUIDConfig
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
