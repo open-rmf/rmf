@@ -2,6 +2,7 @@
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 
+This repo
 The OpenRMF platform for multi-fleet robot management.
 
 ---
@@ -14,7 +15,6 @@ If you are on an Ubuntu 20.04 LTS machine (as recommended), [here is the binary 
 ```bash
 sudo apt remove '^ros-foxy-rmf-.*' -y
 ```
-
 
 ## Install rosdep
 `rosdep` helps install dependencies for ROS packages across various distros. It can be installed with:
@@ -79,7 +79,7 @@ As a result, the first build can take a very long time depending on the server l
 
 ## Run RMF Demos
 
-Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/)
+Demonstrations of RMF is shown in [rmf_demos](https://github.com/siot-decada-robotics/rmf_demos)
 
 ### Docker Containers
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
