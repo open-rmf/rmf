@@ -10,7 +10,7 @@ The OpenRMF platform for multi-fleet robot management.
 First, please follow the installation instructions for ROS 2 Foxy.
 If you are on an Ubuntu 20.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Foxy on Ubuntu 20.04](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/)
 
-## Remove all ROS 2 Fox RMF apt packages
+## Remove all ROS 2 Foxy RMF apt packages
 ```bash
 sudo apt remove '^ros-foxy-rmf-.*' -y
 ```
