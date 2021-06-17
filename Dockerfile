@@ -19,7 +19,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # add github as a known ssh host
-RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
+RUN  mkdir /root/.ssh && chmod 0700 /root/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
