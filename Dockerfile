@@ -15,6 +15,7 @@ RUN apt-get update \
     wget \
     python3-pip \
   && pip3 install flask-socketio \
+  && pip3 install vcstool \
   && rm -rf /var/lib/apt/lists/*
 
 # setup keys
