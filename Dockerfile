@@ -14,8 +14,8 @@ RUN apt-get update \
     qt5-default \
     wget \
     python3-pip \
+    ssh-client \
   && pip3 install flask-socketio \
-  && pip3 install vcstool \
   && rm -rf /var/lib/apt/lists/*
 
 # setup keys
