@@ -58,7 +58,7 @@ repositories:
   thirdparty/ros_ign:
     type: git
     url: https://github.com/osrf/ros_ign.git
-    version: dashing
+    version: foxy
   thirdparty/menge_vendor:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
