@@ -14,6 +14,10 @@ jobs:
         uses: ros-tooling/setup-ros@v0.2
         with:
           required-ros-distributions: foxy
+      - name: non-ros-deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qt5-default
       - name: build
         uses: ros-tooling/action-ros-ci@v0.2
         with:
@@ -42,6 +46,7 @@ jobs:
             rmf_building_map_tools
             rmf_traffic_editor
             rmf_traffic_editor_assets
+            rmf_traffic_editor_test_maps
             rmf_demos
             rmf_demos_assets
             rmf_demos_dashboard_resources
