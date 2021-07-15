@@ -18,6 +18,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y qt5-default
+          export QT_DEBUG_PLUGINS=1
       - name: build
         uses: ros-tooling/action-ros-ci@v0.2
         with:
