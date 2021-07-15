@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: deps
-        uses: ros-tooling/setup-ros@v0.1
+        uses: ros-tooling/setup-ros@v0.2
         with:
           required-ros-distributions: foxy
       - name: build
