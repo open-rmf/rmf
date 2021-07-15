@@ -42,7 +42,6 @@ jobs:
             rmf_building_map_tools
             rmf_traffic_editor
             rmf_traffic_editor_assets
-            test_maps
             rmf_demos
             rmf_demos_assets
             rmf_demos_dashboard_resources
