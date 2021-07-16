@@ -14,14 +14,16 @@ jobs:
         uses: ros-tooling/setup-ros@v0.2
         with:
           required-ros-distributions: foxy
+      - name: print g++ version
+        run: |
+          g++ --version
       - name: non-ros-deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt5-default
-          export QT_DEBUG_PLUGINS=1
-          export DISPLAY=0
       - name: build
         uses: ros-tooling/action-ros-ci@v0.2
+        env:
+          QT_QPA_PLATFORM: offscreen
         with:
           target-ros2-distro: foxy
           # build all packages listed in the meta package
