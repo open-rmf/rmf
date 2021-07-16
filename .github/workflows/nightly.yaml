@@ -18,7 +18,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y qt5-default
-          export QT_QPA_PLATFORM=offscreen
+          QT_QPA_PLATFORM=offscreen
       - name: build
         uses: ros-tooling/action-ros-ci@v0.2
         with:
