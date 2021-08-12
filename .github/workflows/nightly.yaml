@@ -14,13 +14,7 @@ jobs:
         uses: ros-tooling/setup-ros@v0.2
         with:
           required-ros-distributions: foxy
-      - name: print g++ version
-        run: |
-          g++ --version
-      - name: non-ros-deps
-        run: |
-          sudo apt-get update
-      - name: build
+      - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
