@@ -2,6 +2,8 @@
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 
+![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
+
 The OpenRMF platform for multi-fleet robot management.
 
 ---
