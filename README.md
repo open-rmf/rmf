@@ -88,7 +88,7 @@ docker tag docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest rmf:latest
 
 Run it!
 ```bash
-docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos office.launch.xml headless:=1"
+docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
 This will run `rmf_demos` in headless mode. Open `localhost:5000` with a browser to start a task.
 

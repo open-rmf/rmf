@@ -46,6 +46,8 @@ jobs:
             rmf_traffic_editor_assets
             rmf_traffic_editor_test_maps
             rmf_demos
+            rmf_demos_gz
+            rmf_demos_ign
             rmf_demos_assets
             rmf_demos_dashboard_resources
             rmf_demos_maps
