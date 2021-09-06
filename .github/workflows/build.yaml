@@ -4,6 +4,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '1 8 * * *'
 jobs:
   build-docker-images:
     name: Push Docker image to GitHub Packages
@@ -17,5 +19,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/rmf_demos
-          push: ${{ github.event_name == 'push' }} # update registry only during push to main
+          # update registry only during push to main and nightly build
+          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
           tags: latest
