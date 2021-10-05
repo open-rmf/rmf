@@ -1,4 +1,8 @@
 repositories:
+  rmf-web:
+    type: git
+    url: https://github.com/open-rmf/rmf-web
+    version: cf6a599e0c1b4a2f4456ffec1356a834e6020e44
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
