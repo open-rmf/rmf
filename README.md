@@ -10,7 +10,7 @@ The OpenRMF platform for multi-fleet robot management.
 ## Install ROS 2 Galactic
 
 First, please follow the installation instructions for ROS 2 Galactic.
-If you are on an Ubuntu 20.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Galactic on Ubuntu 20.04](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html)
+If you are on an Ubuntu 20.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Galactic on Ubuntu 20.04](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html).
 
 ## Setup Gazebo repositories
 
@@ -96,7 +96,7 @@ As a result, the first build can take a very long time depending on the server l
 
 ## Run RMF Demos
 
-Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/)
+Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
 ### Docker Containers
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
