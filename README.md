@@ -31,10 +31,12 @@ OpenRMF binary packages are available for Ubuntu Focal 20.04 for the `Foxy`, `Ga
 apt-cache search ros-galactic-rmf
 ```
 
-A good way to install the `rmf` set of packages in one go is to install the `rmf_demos` package. This will pull all the rest of the OpenRMF packages as a dependency. As an example, for Galactic, you would run:
+### RMF Demos
+
+A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_dmeos_gz` or `rmf_demos_ign` package which come with gazebo or ignition support respectively. As an example, to install the ROS 2 Galactic release with gazebo support package, you would run:
 
 ```bash
-sudo apt install ros-galactic-rmf-demos
+sudo apt install ros-galactic-rmf-demos-gz
 ```
 
 ## Building from sources
@@ -44,7 +46,7 @@ If you want to get the latest developments you might want to install from source
 
 ### Additional Dependencies
 
-Install all non-ROS dependencies of RMF packages,
+Install all non-ROS dependencies of OpenRMF packages,
 
 ```bash
 sudo apt update && sudo apt install \
@@ -96,7 +98,7 @@ As a result, the first build can take a very long time depending on the server l
 
 ## Run RMF Demos
 
-Demonstrations of RMF is shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
+Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/). 
 
 ### Docker Containers
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
@@ -120,8 +122,8 @@ This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.gi
 
 ## Roadmap
 
-A near-term roadmap of the entire RMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
+A near-term roadmap of the entire OpenRMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
 
 ## Integrating with RMF
 
-Instructions on how to integrate your system with RMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
+Instructions on how to integrate your system with OpenRMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
