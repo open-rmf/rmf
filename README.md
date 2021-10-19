@@ -104,8 +104,8 @@ Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/e
 Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 
 ```bash
-docker pull docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest
-docker tag docker.pkg.github.com/open-rmf/rmf/rmf_demos:latest rmf:latest
+docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
+docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
 ```
 
 Run it!
