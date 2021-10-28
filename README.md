@@ -1,7 +1,8 @@
-# RMF
+# Robotics Middleware Framework (RMF)
+
+![](media/rmf_banner.png)
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
-
 ![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
 
 The OpenRMF platform for multi-fleet robot management.
@@ -98,7 +99,7 @@ As a result, the first build can take a very long time depending on the server l
 
 ## Run RMF Demos
 
-Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/). 
+Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
 ### Docker Containers
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
