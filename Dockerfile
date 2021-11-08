@@ -2,7 +2,7 @@
 # Stage 1 - Dependencies
 #-----------------------
 
-FROM ros:foxy AS builder
+FROM ros:galactic AS builder
 
 RUN apt-get update \
   && apt-get install -y \
@@ -60,7 +60,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 
 # TODO: rosdep doesn't support installing only exec dependencies (https://github.com/ros-infrastructure/rosdep/pull/727)
 #   When the PR is merged, we can do a multi-stage build and include only whats needed at runtime.
-# FROM ros:foxy
+# FROM ros:galactic
 # COPY --from=0 /root/rmf/install /opt/rmf
 # RUN rosdep ...
 # COPY --from=builder /root/rmf/install /opt/rmf
