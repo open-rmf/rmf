@@ -81,7 +81,7 @@ vcs import src < rmf.repos
 Ensure all ROS 2 prerequisites are fulfilled,
 ```
 cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro galactic -yr
+rosdep install --from-paths src --ignore-src --rosdistro galactic -y
 ```
 
 ### Compiling Instructions
