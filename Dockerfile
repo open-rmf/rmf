@@ -14,7 +14,7 @@ RUN apt-get update \
     qt5-default \
     wget \
     python3-pip \
-  && pip3 install flask-socketio \
+  && pip3 install flask-socketio fastapi uvicorn \
   && rm -rf /var/lib/apt/lists/*
 
 # setup keys
