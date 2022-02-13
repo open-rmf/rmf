@@ -7,6 +7,10 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
     version: main
+  rmf/rmf_api_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_api_msgs.git
+    version: main
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
@@ -55,3 +59,11 @@ repositories:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
     version: master
+  thirdparty/nlohmann_json_schema_validator_vendor:
+    type: git
+    url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
+    version: main
+  thirdparty/pybind11_json_vendor:
+    type: git
+    url: https://github.com/open-rmf/pybind11_json_vendor.git
+    version: main
