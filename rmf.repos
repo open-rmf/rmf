@@ -67,21 +67,8 @@ repositories:
     type: git
     url: https://github.com/open-rmf/pybind11_json_vendor.git
     version: main
-<<<<<<< HEAD
-<<<<<<< HEAD
   thirdparty/ros_ign:
     type: git
     url: https://github.com/ignitionrobotics/ros_ign.git
     version: galactic
-=======
->>>>>>> New repos for release 22.02 (#139)
-=======
-  thirdparty/ros_ign:
-    type: git
-    url: https://github.com/ignitionrobotics/ros_ign.git
-<<<<<<< HEAD
-    version: ros2
->>>>>>> Add ros_ign to be built from source (#144)
-=======
-    version: galactic
->>>>>>> fix rmf ci (#151)
+
