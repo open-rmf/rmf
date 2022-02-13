@@ -6,7 +6,7 @@ repositories:
   rmf/rmf_internal_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
-    version: redesign_v2
+    version: main
   rmf/rmf_api_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_api_msgs.git
@@ -14,11 +14,11 @@ repositories:
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: redesign_v2
+    version: main
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: redesign_v2
+    version: main
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
@@ -54,7 +54,7 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
-    version: redesign_v2
+    version: main
   thirdparty/menge_vendor:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
