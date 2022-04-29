@@ -115,10 +115,17 @@ Instructions on how to integrate your system with OpenRMF can be found [here](ht
 
 A number of commercial robots have been integrated with RMF and links to their adapters are available below.
 
+<<<<<<< HEAD
 - [Gaussian Ecobots](https://github.com/open-rmf/fleet_adapter_ecobot)
 - [OTTO Motors](https://github.com/open-rmf/fleet_adapter_clearpath) (and robots running the Clearpath Autonomy stack)
 - [Mobile Industrial Robots: MiR](https://github.com/osrf/fleet_adapter_mir)
 - [Temi- the personal robot](https://github.com/open-rmf/temi_fleet_adapter_python)
+=======
+* [Gaussian Ecobots](https://github.com/open-rmf/fleet_adapter_ecobot)
+* [OTTO Motors](https://github.com/open-rmf/fleet_adapter_clearpath) (and robots running the Clearpath Autonomy stack)
+* [Mobile Industrial Robots: MiR](https://github.com/osrf/fleet_adapter_mir)
+* [Temi- the personal robot](https://github.com/open-rmf/temi_fleet_adapter_python)
+>>>>>>> Add list of fleet adapters (#150)
 
 Help us add to this list!
 
