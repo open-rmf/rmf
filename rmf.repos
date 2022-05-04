@@ -70,4 +70,4 @@ repositories:
   thirdparty/ros_ign:
     type: git
     url: https://github.com/ignitionrobotics/ros_ign.git
-    version: ros2
+    version: galactic
