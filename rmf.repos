@@ -79,5 +79,9 @@ repositories:
   thirdparty/ros_ign:
     type: git
     url: https://github.com/ignitionrobotics/ros_ign.git
+<<<<<<< HEAD
     version: ros2
 >>>>>>> Add ros_ign to be built from source (#144)
+=======
+    version: galactic
+>>>>>>> fix rmf ci (#151)
