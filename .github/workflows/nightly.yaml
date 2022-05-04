@@ -13,13 +13,14 @@ jobs:
       - name: deps
         uses: ros-tooling/setup-ros@v0.2
         with:
-          required-ros-distributions: foxy
+          required-ros-distributions: galactic
+      - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
         with:
-          target-ros2-distro: foxy
+          target-ros2-distro: galactic
           # build all packages listed in the meta package
           package-name: |
             rmf_utils
@@ -54,7 +55,7 @@ jobs:
             rmf_demos_panel
             rmf_demos_tasks
           vcs-repo-file-url: |
-            https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
+            rmf.repos
           colcon-defaults: |
             {
               "build": {
@@ -74,4 +75,3 @@ jobs:
           files: ros_ws/lcov/total_coverage.info
           flags: tests
           name: lean_and_mean_codecov_bot
-
