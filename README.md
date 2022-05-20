@@ -4,7 +4,7 @@ The OpenRMF platform for multi-fleet robot management.
 
 ---
 
-## Ubuntu Installation Instructions
+## Installation Instructions
 
 | RMF Version | Installation Instructions                                                        |
 | ----------- | -------------------------------------------------------------------------------- |
