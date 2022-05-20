@@ -6,11 +6,10 @@ The OpenRMF platform for multi-fleet robot management.
 
 ## Ubuntu Installation Instructions
 
-| Ubuntu version | ROS2 version     | Installation Instructions                              | Latest version                                              |
-| -------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
-| 20.04 LTS      | Foxy             | [ubuntu20.04_foxy](./docs/ubuntu20.04_foxy.md)         | [21.09](https://github.com/open-rmf/rmf/releases/tag/21.09) |
-|                | Galactic         | [ubuntu20.04_galactic](./docs/ubuntu20.04_galactic.md) | [21.09](https://github.com/open-rmf/rmf/releases/tag/21.09) |
-| 22.04 LTS      | Humble Hawksbill | [ubuntu22.04_humble](./docs/ubuntu22.04_humble.md)     | 22.04 Under developement |                      |
+| RMF Version | Installation Instructions                                                        |
+| ----------- | -------------------------------------------------------------------------------- |
+| 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) |
+| 22.04       |                                                                                  |
 
 ## Run RMF Demos
 
