@@ -6,10 +6,10 @@ The OpenRMF platform for multi-fleet robot management.
 
 ## Installation Instructions
 
-| RMF Version | Installation Instructions                                                        |
-| ----------- | -------------------------------------------------------------------------------- |
-| 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) |
-| 22.04       |                                                                                  |
+| RMF Version | Installation Instructions                                                        | Supported distros                                   |
+| ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- |
+| 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8(deployment only) |
+| 22.04       |                                                                                  |                                                     |
 
 ## Run RMF Demos
 
