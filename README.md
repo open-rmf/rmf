@@ -142,65 +142,22 @@ This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.gi
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
-| Packages                           | Version |
-| ---------------------------------- | :-----: |
-| ament_cmake_catch2                 |  1.2.0  |
-| free_fleet                         |         |
-| free_fleet_ros1                    |         |
-| free_fleet_ros2                    |         |
-| menge_vendor                       |  1.0.0  |
-| rmf_battery                        |  0.1.3  |
-| rmf_building_map_msgs              |  1.2.0  |
-| rmf_cmake_uncrustify               |  1.2.0  |
-| rmf_demos                          |         |
-| rmf_demos_ign                      |         |
-| rmf_demos_gz                       |         |
-| rmf_demos_dashboard_resources      |         |
-| rmf_demos_assets                   |         |
-| rmf_demos_maps                     |         |
-| rmf_demos_panel                    |         |
-| rmf_demos_tasks                    |         |
-| rmf_dispenser_msgs                 |  2.0.0  |
-| rmf_door_msgs                      |  2.0.0  |
-| rmf_fleet_msgs                     |  2.0.0  |
-| rmf_ingestor_msgs                  |  2.0.0  |
-| rmf_lift_msgs                      |  2.0.0  |
-| rmf_task_msgs                      |  2.0.0  |
-| rmf_traffic_msgs                   |  2.0.0  |
-| rmf_workcell_msgs                  |  2.0.0  |
-| rmf_charger_msgs                   |  2.0.0  |
-| rmf_fleet_adapter                  |         |
-| rmf_task_ros2                      |         |
-| rmf_traffic_ros2                   |         |
-| rmf_fleet_adapter_python           |         |
-| rmf_robot_sim_gazebo_plugins       |         |
-| rmf_robot_sim_ignition_plugins     |         |
-| rmf_robot_sim_common               |         |
-| rmf_building_sim_gazebo_plugins    |         |
-| rmf_building_sim_ignition_plugins  |         |
-| rmf_building_sim_common            |         |
-| rmf_task                           |  2.0.0  |
-| rmf_task_sequence                  |  2.0.0  |
-| rmf_traffic                        |  2.0.0  |
-| rmf_building_map_tools             |  1.5.1  |
-| rmf_traffic_editor_test_maps       |  1.5.1  |
-| rmf_traffic_editor                 |  1.5.1  |
-| rmf_traffic_editor_assets          |  1.5.1  |
-| rmf_utils                          |  1.4.0  |
-| rmf_visualization_building_systems |         |
-| rmf_visualization_fleet_states     |         |
-| rmf_visualization_schedule         |         |
-| rmf_visualization_rviz2_plugins    |         |
-| rmf_visualization                  |         |
-| rmf_visualization_msgs             |  1.2.0  |
-| stubborn_buddies                   |  1.0.0  |
-| stubborn_buddies_msgs              |  1.0.0  |
-| rmf_api_msgs                       |  0.0.1  |
+## Package Information
 
-## Roadmap
-
-A near-term roadmap of the entire OpenRMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
-
-## Integrating with RMF
-
-Instructions on how to integrate your system with OpenRMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
+| Packages                   | Github link                                            | Version |
+| -------------------------- | ------------------------------------------------------ | ------- |
+| rmf/rmf_battery            | https://github.com/open-rmf/rmf_battery.git            | 0.1.1   |
+| rmf/rmf_internal_msgs      | https://github.com/open-rmf/rmf_internal_msgs.git      | 1.4.0   |
+| rmf/rmf_ros2               | https://github.com/open-rmf/rmf_ros2.git               | 1.4.0   |
+| rmf/rmf_task               | https://github.com/open-rmf/rmf_task.git               | 1.0.0   |
+| rmf/rmf_traffic            | https://github.com/open-rmf/rmf_traffic.git            | 1.4.0   |
+| rmf/rmf_utils              | https://github.com/open-rmf/rmf_utils.git              | 1.3.0   |
+| rmf/rmf_cmake_uncrustify   | https://github.com/open-rmf/rmf_cmake_uncrustify.git   | 1.2.0   |
+| rmf/ament_cmake_catch2     | https://github.com/open-rmf/ament_cmake_catch2.git     | 1.2.0   |
+| rmf/rmf_visualization      | https://github.com/open-rmf/rmf_visualization.git      | 1.2.1   |
+| rmf/rmf_visualization_msgs | https://github.com/open-rmf/rmf_visualization_msgs.git | 1.2.0   |
+| rmf/rmf_building_map_msgs  | https://github.com/open-rmf/rmf_building_map_msgs.git  | 1.2.0   |
+| rmf/rmf_simulation         | https://github.com/open-rmf/rmf_simulation.git         | 1.3.0   |
+| rmf/rmf_traffic_editor     | https://github.com/open-rmf/rmf_traffic_editor.git     | 1.4.0   |
+| demonstrations/rmf_demos   | https://github.com/open-rmf/rmf_demos.git              | 1.3.1   |
+| thirdparty/menge_vendor    | https://github.com/open-rmf/menge_vendor.git           | 1.0.0   |
