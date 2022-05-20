@@ -6,36 +6,10 @@ The OpenRMF platform for multi-fleet robot management.
 
 ## Installation Instructions
 
-| RMF Version | Installation Instructions                                                        | Supported distros                                   |
-| ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- |
-| 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8(deployment only) |
-| 22.04       |                                                                                  |                                                     |
-
-## Run RMF Demos
-
-Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
-
-### Docker Containers
-
-Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
-
-Pull docker image from `open-rmf/rmf` github registry (setup refer [[https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token]]).
-
-```bash
-docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
-docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
-```
-
-Run it!
-
-```bash
-
-docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
-```
-
-This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
-
-(Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
+| RMF Version | Installation Instructions                                                        | Supported distros                                   | Supported ROS2 versions |
+| ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------- |
+| 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8(deployment only) | Foxy,Galactic           |
+| 22.04       |                                                                                  | Ubuntu 22.04                                        | Humble Hawksbill        |
 
 ## Roadmap
 
