@@ -68,6 +68,10 @@ rosdep install --from-paths src --ignore-src --rosdistro galactic -y
 
 ### Compiling Instructions
 
+> NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-galactic-rmf*`.
+
+Compiling on `Ubuntu 20.04`:
+
 ```bash
 cd ~/rmf_ws
 source /opt/ros/<your ros distro>/setup.bash
