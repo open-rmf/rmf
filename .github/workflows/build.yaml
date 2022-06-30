@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: build rmf_demos image and push to gh registry
-        run: |
-          ./build-docker.sh
-          docker push ghcr.io/open-rmf/rmf/rmf_demos
+      - name: build rmf_demos image
+        run: ./build-docker.sh
+      - name: push to gh registry
+        if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
+        run: docker push ghcr.io/open-rmf/rmf/rmf_demos
