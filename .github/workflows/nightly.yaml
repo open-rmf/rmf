@@ -13,14 +13,14 @@ jobs:
       - name: deps
         uses: ros-tooling/setup-ros@v0.2
         with:
-          required-ros-distributions: galactic
+          required-ros-distributions: humble
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
         with:
-          target-ros2-distro: galactic
+          target-ros2-distro: humble
           # build all packages listed in the meta package
           package-name: |
             rmf_utils
