@@ -76,6 +76,8 @@ mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
 wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
 vcs import src < rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf-simulation.repos
+vcs import src < rmf-simulation.repos
 ```
 
 Ensure all ROS 2 prerequisites are fulfilled,
