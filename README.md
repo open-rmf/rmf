@@ -8,10 +8,10 @@
 The OpenRMF platform for multi-fleet robot management.
 
 ---
-## Install ROS 2 Galactic
+## Install ROS 2 Humble
 
-First, please follow the installation instructions for ROS 2 Galactic.
-If you are on an Ubuntu 20.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Galactic on Ubuntu 20.04](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html).
+First, please follow the installation instructions for ROS 2 Humble.
+If you are on an Ubuntu 22.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
 ## Setup Gazebo repositories
 
@@ -26,18 +26,18 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 ## Binary install
 
-OpenRMF binary packages are available for Ubuntu Focal 20.04 for the `Foxy`, `Galactic` and `Rolling` releases of ROS 2. Most OpenRMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for galatic it would be:
+Latest OpenRMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most OpenRMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for galatic it would be:
 
 ```bash
-apt-cache search ros-galactic-rmf
+apt-cache search ros-humble-rmf
 ```
 
 ### RMF Demos
 
-A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_ign` package which come with gazebo or ignition support respectively. As an example, to install the ROS 2 Galactic release with gazebo support package, you would run:
+A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_ign` package which come with gazebo or ignition support respectively. As an example, to install the ROS 2 Humble release with gazebo support package, you would run:
 
 ```bash
-sudo apt install ros-galactic-rmf-demos-gz
+sudo apt install ros-humble-rmf-demos-gz
 ```
 
 ## Building from sources
@@ -81,19 +81,30 @@ vcs import src < rmf.repos
 Ensure all ROS 2 prerequisites are fulfilled,
 ```
 cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro galactic -y
+rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
 ### Compiling Instructions
 
-> NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-galactic-rmf*`.
+> NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-humble-rmf*`.
 
-Compiling on `Ubuntu 20.04`:
+Compiling on `Ubuntu 22.04`:
+
+Install clang
+
+```bash
+sudo apt update
+sudo apt install clang lldb lld
+```
+
+**NOTE: RMF does not support building on gcc.**
+
+Compile using clang
 
 ```bash
 cd ~/rmf_ws
-source /opt/ros/galactic/setup.bash
-colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+source /opt/ros/humble/setup.bash
+CXX=clang++ LDFLAGS='-fuse-ld=lld' colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
@@ -106,18 +117,8 @@ Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/r
 ### Docker Containers
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
 
-Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
-
 ```bash
-docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
-docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
-```
-
-Run it!
-
-```bash
-
-docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
+docker run -it --network host ghcr.io/open-rmf/rmf/rmf_demos:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_ign office.launch.xml headless:=1"
 ```
 This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
 
