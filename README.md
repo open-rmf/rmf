@@ -118,7 +118,7 @@ Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/r
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
 
 ```bash
-docker run -it --network host ghcr.io/open-rmf/rmf/rmf_demos:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_ign office.launch.xml headless:=1"
+docker run -it --network host ghcr.io/open-rmf/rmf/rmf_demos:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
 This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
 
