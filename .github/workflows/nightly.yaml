@@ -16,8 +16,8 @@ jobs:
           required-ros-distributions: humble
       - name: setup clang
         run: |
-          apt update && apt install -y clang lldb lld
-          update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
+          sudo apt update && sudo apt install -y clang lldb lld
+          sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
