@@ -18,8 +18,6 @@ jobs:
         run: |
           sudo apt update && sudo apt install -y clang lldb lld
           sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
-      - name: asdasd
-        run: apt search libceres-dev
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
