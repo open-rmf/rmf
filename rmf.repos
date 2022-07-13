@@ -67,7 +67,3 @@ repositories:
     type: git
     url: https://github.com/open-rmf/pybind11_json_vendor.git
     version: main
-  thirdparty/ros_ign:
-    type: git
-    url: https://github.com/ignitionrobotics/ros_ign.git
-    version: galactic

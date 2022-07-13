@@ -12,13 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: build rmf image and push to gh registry
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/rmf_demos
-          # update registry only during push to main and nightly build
-          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
-          tags: latest
+      - name: build rmf_demos image
+        run: ./build-docker.sh
+      - name: push to gh registry
+        if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
+        run: docker push ghcr.io/open-rmf/rmf/rmf_demos

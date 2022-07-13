@@ -1,0 +1,15 @@
+repositories:
+  rmf/rmf_simulation:
+    type: git
+    url: https://github.com/open-rmf/rmf_simulation.git
+    version: main
+  rmf/rmf_internal_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
+    version: main
+  rmf/rmf_building_map_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_building_map_msgs.git
+  thirdparty/menge_vendor:
+    type: git
+    url: https://github.com/open-rmf/menge_vendor.git
