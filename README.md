@@ -16,7 +16,6 @@ For specific rmf versions follow the instructions given below:
 | RMF Version | Installation Instructions                                                        | Supported distros                                   | Supported ROS2 versions |
 | ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------- |
 | 21.09       |  [installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8(deployment only) | Foxy,Galactic           |
-| 22.04       |                                                                                  | Ubuntu 22.04                                        | Humble Hawksbill        |
 
 ## Building from sources
 
