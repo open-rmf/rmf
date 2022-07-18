@@ -74,9 +74,9 @@ Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 ```bash
 mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
-wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/humble-image/rmf.repos
 vcs import src < rmf.repos
-wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf-simulation.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/humble-image/rmf-simulation.repos
 vcs import src < rmf-simulation.repos
 ```
 
