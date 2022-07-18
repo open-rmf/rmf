@@ -26,6 +26,8 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 ## Binary install
 
+> NOTE: Given that certain RMF binary packages for Humble are not released yet and are still work-in-progress, it is highly recommended to build from source.
+
 Latest OpenRMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most OpenRMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for galatic it would be:
 
 ```bash
