@@ -28,7 +28,7 @@ sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   qt5-default \
   -y
-python3 -m pip install flask-socketio
+python3 -m pip install flask-socketio fastapi uvicorn
 sudo apt-get install python3-colcon*
 ```
 
