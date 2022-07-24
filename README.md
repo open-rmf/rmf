@@ -84,28 +84,6 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
-### Docker Containers
-
-Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
-
-Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
-
-```bash
-docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
-docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
-```
-
-Run it!
-
-```bash
-
-docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
-```
-
-This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
-
-(Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
-
 ## Roadmap
 
 A near-term roadmap of the entire OpenRMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
