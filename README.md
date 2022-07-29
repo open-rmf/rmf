@@ -13,6 +13,8 @@ For specific rmf versions follow the instructions given below:
 
 ## Installation Instructions
 
+These are the current Open-RMF binary releases available:
+
 | RMF Version | Installation Instructions                                                        | Supported distros                                   | Supported ROS2 versions |
 | ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------- |
 | 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic           |
