@@ -1,4 +1,4 @@
-# RMF
+# Open-RMF 21.09
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 
