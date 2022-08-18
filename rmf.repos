@@ -2,11 +2,11 @@ repositories:
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
-    version: 0.1.1
+    version: 0.1.3
   rmf/rmf_internal_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
-    version: 1.4.0
+    version: 2.0.0
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
@@ -14,15 +14,15 @@ repositories:
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: 1.0.0
+    version: 2.0.0
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
-    version: 1.4.0
+    version: 2.0.0
   rmf/rmf_utils:
     type: git
     url: https://github.com/open-rmf/rmf_utils.git
-    version: 1.3.0
+    version: 1.4.0
   rmf/rmf_cmake_uncrustify:
     type: git
     url: https://github.com/open-rmf/rmf_cmake_uncrustify.git
@@ -50,7 +50,7 @@ repositories:
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
-    version: 1.4.0
+    version: 1.5.1
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git

@@ -1,4 +1,4 @@
-# Open-RMF 21.09
+# Open-RMF 22.02
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 
@@ -10,9 +10,8 @@ The OpenRMF platform for multi-fleet robot management.
 
 ## Installation Instructions
 
-First, please follow the installation instructions for ROS 2 Foxy,
-[here is the binary install page for ROS 2 Foxy on Ubuntu 20.04](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html) or follow the installation instructions for ROS 2 Galactic,
-[here is the binary install page for ROS 2 Galactic on Ubuntu 20.04](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html).
+First, please follow the installation instructions for ROS 2 Humble,
+[here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
 ## Setup Gazebo repositories
 
@@ -29,16 +28,10 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_ign` package which come with gazebo or ignition support respectively. As an example, to install the ROS 2 release with gazebo support package, you would run:
 
-For Foxy:-
+For Humble:-
 
 ```bash
-sudo apt install ros-foxy-rmf-demos-gz
-```
-
-For Galactic:-
-
-```bash
-sudo apt install ros-galactic-rmf-demos-gz
+sudo apt install ros-humble-rmf-demos-gz
 ```
 
 ## Building from sources
@@ -75,41 +68,26 @@ Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 ```bash
 mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
-wget https://raw.githubusercontent.com/open-rmf/rmf/release/21.09/rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/release/22.02/rmf.repos
 vcs import src < rmf.repos
 ```
 
 Ensure all ROS 2 prerequisites are fulfilled,
 
-For Foxy:-
+For Humble:-
 
 ```bash
 cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro foxy -y
-```
-
-For Galactic:-
-
-```bash
-cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro galactic -y
+rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
 ### Compiling Instructions
 
-For Foxy:-
+For Humble:-
 
 ```bash
 cd ~/rmf_ws
-source /opt/ros/foxy/setup.bash
-colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
-```
-
-For Galactic:-
-
-```bash
-cd ~/rmf_ws
-source /opt/ros/galactic/setup.bash
+source /opt/ros/humble/setup.bash
 colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
@@ -124,18 +102,18 @@ Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/r
 
 | Packages                   | Github link                                                   | Version |
 | -------------------------- | ------------------------------------------------------------- | ------- |
-| rmf/rmf_battery            | https://github.com/open-rmf/rmf_battery/tree/0.1.1            | 0.1.1   |
-| rmf/rmf_internal_msgs      | https://github.com/open-rmf/rmf_internal_msgs/tree/1.4.0      | 1.4.0   |
+| rmf/rmf_battery            | https://github.com/open-rmf/rmf_battery/tree/0.1.3            | 0.1.3   |
+| rmf/rmf_internal_msgs      | https://github.com/open-rmf/rmf_internal_msgs/tree/2.0.0      | 2.0.0   |
 | rmf/rmf_ros2               | https://github.com/open-rmf/rmf_ros2/tree/1.4.0               | 1.4.0   |
-| rmf/rmf_task               | https://github.com/open-rmf/rmf_task/tree/1.0.0               | 1.0.0   |
-| rmf/rmf_traffic            | https://github.com/open-rmf/rmf_traffic/tree/1.4.0            | 1.4.0   |
-| rmf/rmf_utils              | https://github.com/open-rmf/rmf_utils/tree/1.3.0              | 1.3.0   |
+| rmf/rmf_task               | https://github.com/open-rmf/rmf_task/tree/2.0.0               | 2.0.0   |
+| rmf/rmf_traffic            | https://github.com/open-rmf/rmf_traffic/tree/2.0.0            | 2.0.0   |
+| rmf/rmf_utils              | https://github.com/open-rmf/rmf_utils/tree/1.4.0              | 1.4.0   |
 | rmf/rmf_cmake_uncrustify   | https://github.com/open-rmf/rmf_cmake_uncrustify/tree/1.2.0   | 1.2.0   |
 | rmf/ament_cmake_catch2     | https://github.com/open-rmf/ament_cmake_catch2/tree/1.2.0     | 1.2.0   |
 | rmf/rmf_visualization      | https://github.com/open-rmf/rmf_visualization/tree/1.2.1      | 1.2.1   |
 | rmf/rmf_visualization_msgs | https://github.com/open-rmf/rmf_visualization_msgs/tree/1.2.0 | 1.2.0   |
 | rmf/rmf_building_map_msgs  | https://github.com/open-rmf/rmf_building_map_msgs/tree/1.2.0  | 1.2.0   |
 | rmf/rmf_simulation         | https://github.com/open-rmf/rmf_simulation/tree/1.3.0         | 1.3.0   |
-| rmf/rmf_traffic_editor     | https://github.com/open-rmf/rmf_traffic_editor/tree/1.4.0     | 1.4.0   |
+| rmf/rmf_traffic_editor     | https://github.com/open-rmf/rmf_traffic_editor/tree/1.5.1     | 1.5.1   |
 | demonstrations/rmf_demos   | https://github.com/open-rmf/rmf_demos/tree/1.3.1              | 1.3.1   |
 | thirdparty/menge_vendor    | https://github.com/open-rmf/menge_vendor/tree/1.0.0           | 1.0.0   |
