@@ -33,8 +33,7 @@ jobs:
             rmf_traffic
             rmf_task
             rmf_battery
-            rmf_fleet_adapter
-            # rmf_fleet_adapter_python Tests need to be updated
+            rmf_fleet_adapter 
             rmf_task_ros2
             rmf_traffic_ros2
             rmf_visualization
