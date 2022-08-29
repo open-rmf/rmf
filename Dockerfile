@@ -1,9 +1,10 @@
 #-----------------------
 # Stage 1 - Dependencies
 #-----------------------
+ARG ROS_DISTRO=humble
+FROM ros:$ROS_DISTRO AS builder
 
-FROM ros:galactic AS builder
-
+# qt5-default become obsolete since 21.04 https://bugs.launchpad.net/ubuntu/+source/qtbase-opensource-src/+bug/1926802
 RUN apt-get update \
   && apt-get install -y \
     cmake \
@@ -11,7 +12,9 @@ RUN apt-get update \
     git \
     python3-colcon-common-extensions \
     python3-vcstool \
-    qt5-default \
+    qtbase5-dev \
+    qt5-qmake \
+    qtbase5-dev-tools \
     wget \
     python3-pip \
   && pip3 install flask-socketio fastapi uvicorn \
@@ -35,13 +38,12 @@ COPY rmf.repos rmf.repos
 RUN vcs import src < rmf.repos \
     && apt-get update \
     && apt-get upgrade -y \
+    && apt-get install -y ignition-fortress clang clang-tools lld llvm-dev libc++-12-dev python3-colcon-mixin \
     && rosdep update \
     && rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -yr \
     && rm -rf /var/lib/apt/lists/*
-RUN apt-get update \
-    && apt-get install -y ignition-edifice \
-    && rm -rf /var/lib/apt/lists/*
 
+RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && colcon mixin update default || true
 #-----------------
 # Stage 2 - build
 #-----------------
@@ -52,8 +54,9 @@ RUN apt-get update \
   # && npm run build --prefix src/demonstrations/rmf_demos/rmf_demos_panel/rmf_demos_panel/static/
 
 # colcon compilation
-RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-  && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+RUN export CXX=clang++  && export CC=clang && . /opt/ros/$ROS_DISTRO/setup.sh \
+  && colcon build --mixin lld release 
+    # --packages-skip-up-to rmf_demos_ign ros_ign_bridge ros_ign_image ros_ign_gazebo_demos ros_ign_gazebo ros_ign_interfaces
 
 #----------
 # Stage 3
