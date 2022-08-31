@@ -18,8 +18,7 @@ These are the current Open-RMF binary releases available:
 | RMF Version | Installation Instructions                                                        | Supported distros                                    | Supported ROS2 versions |
 | ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
 | 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic          |
-| 22.02       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/22.02) | Ubuntu 22.04 | Humble|
-
+| 22.02       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/22.02) | Ubuntu 22.04                                         | Humble                  |
 
 ## Building from sources
 
@@ -47,6 +46,8 @@ rosdep update
 ```
 
 ### Download the source code
+
+> Note all repositories now have a `galactic-devel` branch. New changes will be targeted for `humble` however if any change can be backported to `galactic` they will be added to the `galactic-devel` branch.
 
 Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 
