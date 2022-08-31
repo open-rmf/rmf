@@ -47,8 +47,6 @@ rosdep update
 
 ### Download the source code
 
-> Note all repositories now have a `galactic-devel` branch. New changes will be targeted for `humble` however if any change can be backported to `galactic` they will be added to the `galactic-devel` branch.
-
 Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 
 ```bash
