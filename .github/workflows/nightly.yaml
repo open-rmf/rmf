@@ -10,10 +10,17 @@ jobs:
     name: Nightly build and test
     runs-on: ubuntu-22.04
     steps:
-      - name: deps
+      - name: ros deps
         uses: ros-tooling/setup-ros@v0.3
         with:
           required-ros-distributions: humble
+      - name: specific deps
+        run: |
+          sudo apt-get upgrade -y \
+          && sudo apt-get install -y ignition-fortress clang clang-tools lld llvm-dev libc++-12-dev python3-colcon-mixin
+      - name: horrible hack becuase of "https://github.com/ros-tooling/setup-ros/issues/506"
+        run: |
+          sudo apt update && sudo apt remove --purge -y libc++-dev libc++abi-dev libunwind-14-dev && sudo apt autoremove
       - name: setup clang
         run: |
           sudo apt update && sudo apt install -y clang lldb lld
@@ -23,41 +30,45 @@ jobs:
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
+          CC: clang
+          CXX: clang++
         with:
           target-ros2-distro: humble
           # build all packages listed in the meta package
           package-name: |
-            rmf_utils
-            rmf_traffic
-            rmf_task
-            rmf_battery
-            rmf_fleet_adapter
-            rmf_fleet_adapter_python
-            rmf_task_ros2
-            rmf_traffic_ros2
-            rmf_visualization
-            rmf_visualization_building_systems
-            rmf_visualization_fleet_states
-            rmf_visualization_rviz2_plugins
-            rmf_visualization_schedule
-            rmf_building_sim_common
-            rmf_building_sim_gazebo_plugins
-            rmf_building_sim_ignition_plugins
-            rmf_robot_sim_common
-            rmf_robot_sim_gazebo_plugins
-            rmf_robot_sim_ignition_plugins
-            rmf_building_map_tools
-            rmf_traffic_editor
-            rmf_traffic_editor_assets
-            rmf_traffic_editor_test_maps
-            rmf_demos
-            rmf_demos_gz
-            rmf_demos_ign
-            rmf_demos_assets
-            rmf_demos_dashboard_resources
-            rmf_demos_maps
-            rmf_demos_panel
-            rmf_demos_tasks
+            rmf_task_msgs
+#            rmf_utils
+#            rmf_traffic
+#            rmf_task
+#            rmf_battery
+#            rmf_fleet_adapter
+#            rmf_fleet_adapter_python
+#            rmf_task_ros2
+#            rmf_traffic_ros2
+#            rmf_visualization
+#            rmf_visualization_building_systems
+#            rmf_visualization_fleet_states
+#            rmf_visualization_rviz2_plugins
+#            rmf_visualization_schedule
+#            rmf_building_sim_common
+#            rmf_building_sim_gazebo_plugins
+#            rmf_building_sim_ignition_plugins
+#            rmf_robot_sim_common
+#            rmf_robot_sim_gazebo_plugins
+#            rmf_robot_sim_ignition_plugins
+#            rmf_building_map_tools
+#            rmf_traffic_editor
+#            rmf_traffic_editor_assets
+#            rmf_traffic_editor_test_maps
+#            rmf_dispenser_msgs
+#            rmf_demos
+#            rmf_demos_gz
+#            rmf_demos_ign
+#            rmf_demos_assets
+#            rmf_demos_dashboard_resources
+#            rmf_demos_maps
+#            rmf_demos_panel
+#            rmf_demos_tasks
           vcs-repo-file-url: |
             rmf.repos
           colcon-defaults: |
@@ -79,3 +90,5 @@ jobs:
           files: ros_ws/lcov/total_coverage.info
           flags: tests
           name: lean_and_mean_codecov_bot
+
+
