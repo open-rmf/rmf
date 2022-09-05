@@ -15,9 +15,9 @@ For specific rmf versions follow the instructions given below:
 
 These are the current Open-RMF binary releases available:
 
-| RMF Version | Installation Instructions                                                        | Supported distros                                   | Supported ROS2 versions |
-| ----------- | -------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------- |
-| 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic           |
+| RMF Version | Installation Instructions                                                        | Supported distros                                    | Supported ROS2 versions |
+| ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
+| 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic          |
 
 ## Building from sources
 
@@ -45,6 +45,8 @@ rosdep update
 ```
 
 ### Download the source code
+
+> Note all repositories now have a `galactic-devel` branch. New changes will be targeted for `ROS2 Humble`. If any change is compatible with `ROS2 galactic` they will be backported to the `galactic-devel` branch.
 
 Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
 
@@ -81,7 +83,9 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 > As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
+
 ### Docker Containers
+
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
 
 Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
@@ -97,6 +101,7 @@ Run it!
 
 docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
+
 This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
@@ -117,10 +122,10 @@ Instructions on how to integrate your system with OpenRMF can be found [here](ht
 
 A number of commercial robots have been integrated with RMF and links to their adapters are available below.
 
-* [Gaussian Ecobots](https://github.com/open-rmf/fleet_adapter_ecobot)
-* [OTTO Motors](https://github.com/open-rmf/fleet_adapter_clearpath) (and robots running the Clearpath Autonomy stack)
-* [Mobile Industrial Robots: MiR](https://github.com/osrf/fleet_adapter_mir)
-* [Temi- the personal robot](https://github.com/open-rmf/temi_fleet_adapter_python)
+- [Gaussian Ecobots](https://github.com/open-rmf/fleet_adapter_ecobot)
+- [OTTO Motors](https://github.com/open-rmf/fleet_adapter_clearpath) (and robots running the Clearpath Autonomy stack)
+- [Mobile Industrial Robots: MiR](https://github.com/osrf/fleet_adapter_mir)
+- [Temi- the personal robot](https://github.com/open-rmf/temi_fleet_adapter_python)
 
 Help us add to this list!
 
