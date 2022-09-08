@@ -8,19 +8,23 @@ on:
 jobs:
   build_and_test:
     name: Nightly build and test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: deps
-        uses: ros-tooling/setup-ros@v0.2
+        uses: ros-tooling/setup-ros@v0.4
         with:
-          required-ros-distributions: galactic
+          required-ros-distributions: humble
+      - name: setup clang
+        run: |
+          sudo apt update && sudo apt install -y clang lldb lld
+          sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
         with:
-          target-ros2-distro: galactic
+          target-ros2-distro: humble
           # build all packages listed in the meta package
           package-name: |
             rmf_utils
@@ -37,18 +41,18 @@ jobs:
             rmf_visualization_rviz2_plugins
             rmf_visualization_schedule
             rmf_building_sim_common
-            rmf_building_sim_gazebo_plugins
-            rmf_building_sim_ignition_plugins
+            rmf_building_sim_gz_plugins
+            rmf_building_sim_gz_classic_plugins
             rmf_robot_sim_common
-            rmf_robot_sim_gazebo_plugins
-            rmf_robot_sim_ignition_plugins
+            rmf_robot_sim_gz_plugins
+            rmf_robot_sim_gz_classic_plugins
             rmf_building_map_tools
             rmf_traffic_editor
             rmf_traffic_editor_assets
             rmf_traffic_editor_test_maps
             rmf_demos
             rmf_demos_gz
-            rmf_demos_ign
+            rmf_demos_gz_classic
             rmf_demos_assets
             rmf_demos_dashboard_resources
             rmf_demos_maps

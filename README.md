@@ -19,7 +19,41 @@ These are the current Open-RMF binary releases available:
 | ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
 | 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic          |
 
+## Install ROS 2 Humble
+
+First, please follow the installation instructions for ROS 2 Humble.
+If you are on an Ubuntu 22.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
+
+## Setup Gazebo repositories
+
+Setup your computer to accept Gazebo packages from packages.osrfoundation.org.
+
+```bash
+sudo apt update
+sudo apt install -y wget
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+```
+
+## Binary install
+
+Latest OpenRMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most OpenRMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
+
+```bash
+apt-cache search ros-humble-rmf
+```
+
+### RMF Demos
+
+A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:
+
+```bash
+sudo apt install ros-humble-rmf-demos-gz-classic
+```
+
 ## Building from sources
+
+If you want to get the latest developments you might want to install from sources and compile OpenRMF yourself.
 
 ### Additional Dependencies
 
@@ -28,7 +62,6 @@ Install all non-ROS dependencies of OpenRMF packages,
 ```bash
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
-  qt5-default \
   -y
 python3 -m pip install flask-socketio fastapi uvicorn
 sudo apt-get install python3-colcon*
@@ -62,23 +95,34 @@ Ensure all ROS 2 prerequisites are fulfilled,
 you can subsutitute your distro name for `<your ros distro>`
 
 Example:
-for `galactic`
+for `humble`
 
 ```bash
 cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro galactic -y
+rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
 ### Compiling Instructions
 
-> NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-galactic-rmf*`.
+> NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-humble-rmf*`.
 
-Compiling on `Ubuntu 20.04`:
+Compiling on `Ubuntu 22.04`:
+
+#### Install clang
+
+```bash
+sudo apt update
+sudo apt install clang lldb lld
+```
+
+**NOTE: RMF does not support building on gcc.**
+
+#### Compile using clang
 
 ```bash
 cd ~/rmf_ws
-source /opt/ros/<your ros distro>/setup.bash
-colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+source /opt/ros/humble/setup.bash
+CXX=clang++ LDFLAGS='-fuse-ld=lld' colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.

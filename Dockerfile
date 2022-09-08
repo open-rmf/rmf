@@ -2,7 +2,7 @@
 # Stage 1 - Dependencies
 #-----------------------
 
-FROM ros:galactic AS builder
+FROM ros:humble AS builder
 
 RUN apt-get update \
   && apt-get install -y \
@@ -11,7 +11,6 @@ RUN apt-get update \
     git \
     python3-colcon-common-extensions \
     python3-vcstool \
-    qt5-default \
     wget \
     python3-pip \
   && pip3 install flask-socketio fastapi uvicorn \
@@ -37,9 +36,6 @@ RUN vcs import src < rmf.repos \
     && apt-get upgrade -y \
     && rosdep update \
     && rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -yr \
-    && rm -rf /var/lib/apt/lists/*
-RUN apt-get update \
-    && apt-get install -y ignition-edifice \
     && rm -rf /var/lib/apt/lists/*
 
 #-----------------
