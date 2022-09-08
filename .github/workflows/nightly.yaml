@@ -13,7 +13,7 @@ jobs:
       image: rostooling/setup-ros-docker:ubuntu-focal-latest
     steps:
       - name: deps
-        uses: ros-tooling/setup-ros@v0.3
+        uses: ros-tooling/setup-ros@v0.4
         with:
           required-ros-distributions: galactic
       - name: install_clang
