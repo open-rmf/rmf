@@ -41,9 +41,6 @@ jobs:
             rmf_visualization_fleet_states
             rmf_visualization_rviz2_plugins
             rmf_visualization_schedule
-            rmf_building_sim_common
-            rmf_building_sim_gazebo_plugins
-            rmf_building_sim_ignition_plugins
             rmf_robot_sim_common
             rmf_robot_sim_gazebo_plugins
             rmf_robot_sim_ignition_plugins
