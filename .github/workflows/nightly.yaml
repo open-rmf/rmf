@@ -8,7 +8,7 @@ on:
 jobs:
   build_and_test:
     name: Nightly build and test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container:
       image: rostooling/setup-ros-docker:ubuntu-focal-latest
     steps:
@@ -18,6 +18,8 @@ jobs:
           required-ros-distributions: galactic
       - name: install_clang
         run: sudo apt update && sudo apt install -y clang clang-tools lld
+      - name: fix cryptography==2.8 # https://github.com/open-rmf/rmf/pull/202#pullrequestreview-1100045417
+        run: pip3 install cryptography==2.8
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
