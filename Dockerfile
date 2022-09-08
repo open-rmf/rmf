@@ -13,9 +13,9 @@ RUN apt-get update \
     python3-vcstool \
     wget \
     python3-pip \
-    clang-13 lldb-13 lld-13 \
+    clang lldb lld \
   && pip3 install flask-socketio fastapi uvicorn \
-  && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-13 100 \
+  && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100 \
   && rm -rf /var/lib/apt/lists/*
 
 # setup keys

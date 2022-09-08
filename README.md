@@ -115,14 +115,26 @@ sudo apt update
 sudo apt install clang lldb lld
 ```
 
-**NOTE: RMF does not support building on gcc.**
+**NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
 
 #### Compile using clang
+
+Update colcon mixin which is a one time step:
+
+```bash
+colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+colcon mixin update default
+```
+
+Compile the workspace:
 
 ```bash
 cd ~/rmf_ws
 source /opt/ros/humble/setup.bash
-CXX=clang++ LDFLAGS='-fuse-ld=lld' colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+export CXX=clang++
+export CX=clang
+colcon build --mixin "release lld"
 ```
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
