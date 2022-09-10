@@ -32,6 +32,15 @@ jobs:
         with:
           target-ros2-distro: humble
           # build all packages listed in the meta package
+          # FIX NEEDED: This packages need to be renamed when
+          #    https://github.com/open-rmf/rmf_simulation/pull/77
+          #    https://github.com/open-rmf/rmf_demos/pull/155
+          #    are merged
+          #            rmf_building_sim_gazebo_plugins
+          #            rmf_building_sim_ignition_plugins
+          #            rmf_robot_sim_gazebo_plugins
+          #            rmf_robot_sim_ignition_plugins
+          #            rmf_demos_gz
           package-name: |
             rmf_utils
             rmf_traffic
@@ -47,18 +56,17 @@ jobs:
             rmf_visualization_rviz2_plugins
             rmf_visualization_schedule
             rmf_building_sim_common
-            rmf_building_sim_gz_plugins
-            rmf_building_sim_gz_classic_plugins
             rmf_robot_sim_common
-            rmf_robot_sim_gz_plugins
-            rmf_robot_sim_gz_classic_plugins
             rmf_building_map_tools
             rmf_traffic_editor
             rmf_traffic_editor_assets
             rmf_traffic_editor_test_maps
+            rmf_building_sim_gazebo_plugins
+            rmf_building_sim_ignition_plugins
+            rmf_robot_sim_gazebo_plugins
+            rmf_robot_sim_ignition_plugins
             rmf_demos
             rmf_demos_gz
-            rmf_demos_gz_classic
             rmf_demos_assets
             rmf_demos_dashboard_resources
             rmf_demos_maps
