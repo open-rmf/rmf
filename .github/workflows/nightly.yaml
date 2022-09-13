@@ -9,6 +9,8 @@ jobs:
   build_and_test:
     name: Nightly build and test
     runs-on: ubuntu-22.04
+    container:
+      image: rostooling/setup-ros-docker:ubuntu-jammy-latest
     steps:
       - name: deps
         uses: ros-tooling/setup-ros@v0.4
