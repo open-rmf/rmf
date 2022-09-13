@@ -1,5 +1,5 @@
 name: nightly
-on: 
+on:
   push:
   pull_request:
   schedule:
@@ -8,17 +8,25 @@ on:
 jobs:
   build_and_test:
     name: Nightly build and test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    container:
+      image: rostooling/setup-ros-docker:ubuntu-focal-latest
     steps:
       - name: deps
-        uses: ros-tooling/setup-ros@v0.2
+        uses: ros-tooling/setup-ros@v0.4
         with:
           required-ros-distributions: galactic
+      - name: install_clang
+        run: sudo apt update && sudo apt install -y clang clang-tools lld
+      - name: fix cryptography==2.8 # https://github.com/open-rmf/rmf/pull/202#pullrequestreview-1100045417
+        run: pip3 install cryptography==2.8
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
         env:
           QT_QPA_PLATFORM: offscreen
+          CC: clang
+          CXX: clang++
         with:
           target-ros2-distro: galactic
           # build all packages listed in the meta package
@@ -27,8 +35,7 @@ jobs:
             rmf_traffic
             rmf_task
             rmf_battery
-            rmf_fleet_adapter
-            rmf_fleet_adapter_python
+            rmf_fleet_adapter 
             rmf_task_ros2
             rmf_traffic_ros2
             rmf_visualization
@@ -59,7 +66,7 @@ jobs:
           colcon-defaults: |
             {
               "build": {
-                "mixin": ["coverage-gcc"]
+                "mixin": ["coverage-gcc", "lld"]
               }
             }
           colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
