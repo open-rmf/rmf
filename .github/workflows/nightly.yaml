@@ -21,6 +21,15 @@ jobs:
           sudo apt update && sudo apt install -y clang lldb lld
           sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
           sudo update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100
+      # TODO: Remove this step when the incompatibility between libunwind14 and libundind dissapears https://github.com/open-rmf/rmf_traffic_editor/issues/439
+      - name: Horrible hack for libceres
+        run: |
+          apt-get remove -y --purge libc++-dev || true 
+          apt-get remove -y --purge libc++abi-dev || true
+          apt-get remove -y --purge libunwind-14-dev || true 
+          apt-get remove -y --purge libunwind-14-dev || true 
+          apt-get remove -y --purge libunwind-dev || true
+          apt -y autoremove
       - uses: actions/checkout@v2
       - name: build_and_test
         uses: ros-tooling/action-ros-ci@v0.2
