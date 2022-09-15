@@ -133,8 +133,8 @@ cd ~/rmf_ws
 source /opt/ros/humble/setup.bash
 
 export CXX=clang++
-export CX=clang
-colcon build --mixin "release lld"
+export CC=clang
+colcon build --mixin release lld
 ```
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
