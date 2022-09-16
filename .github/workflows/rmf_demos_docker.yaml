@@ -1,0 +1,24 @@
+name: build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '1 8 * * *'
+jobs:
+  build-docker-images:
+    name: Push Docker image to GitHub Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build rmf image and push to gh registry
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/rmf_demos
+          # update registry only during push to main and nightly build
+          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
+          tags: latest

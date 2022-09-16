@@ -1,24 +1,45 @@
 name: build
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
   schedule:
     - cron: '1 8 * * *'
+  workflow_dispatch:
+
 jobs:
-  build-docker-images:
-    name: Push Docker image to GitHub Packages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: build rmf image and push to gh registry
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/rmf_demos
-          # update registry only during push to main and nightly build
-          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
-          tags: latest
+  build_and_test:
+    name: rmf_ros2
+    uses: open-rmf/rmf_ci_templates/.github/workflows/reusable_build.yaml@main
+    with:
+      # NOTE: Avoid adding comments in the package lines, this can break some of the called scripts in github actions
+      # TODO(MXG): rmf_fleet_adapter_python tests are failing in the CI, and it seems to be related to https://github.com/ros2/launch/pull/592. Figure out how to fix this.
+      packages: |
+        rmf_utils
+        rmf_traffic
+        rmf_task
+        rmf_battery
+        rmf_fleet_adapter
+        rmf_task_ros2
+        rmf_traffic_ros2
+        rmf_visualization
+        rmf_visualization_building_systems
+        rmf_visualization_fleet_states
+        rmf_visualization_rviz2_plugins
+        rmf_visualization_schedule
+        rmf_building_sim_common
+        rmf_building_sim_gz_plugins
+        rmf_building_sim_gz_classic_plugins
+        rmf_robot_sim_common
+        rmf_robot_sim_gz_plugins
+        rmf_robot_sim_gz_classic_plugins
+        rmf_building_map_tools
+        rmf_traffic_editor
+        rmf_traffic_editor_assets
+        rmf_traffic_editor_test_maps
+        rmf_demos
+        rmf_demos_gz
+        rmf_demos_gz_classic
+        rmf_demos_assets
+        rmf_demos_dashboard_resources
+        rmf_demos_maps
+        rmf_demos_panel
+        rmf_demos_tasks
