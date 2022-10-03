@@ -1,0 +1,63 @@
+build_types:
+  R:
+    bin:
+      - [ uJ64, ubuntu_jammy_amd64__binary ]
+      - [ ujv8_uJv8, ubuntu_jammy_arm64__binary ]
+      - [ rhel_el864, rhel_8_x86_64__binary ]
+    dev:
+      - [ "", ubuntu_jammy_amd64 ]
+    doc:
+      - [ "", ubuntu_jammy_amd64 ]
+    src:
+      - [ el8, rhel_8__source ]
+      - [ uJ, ubuntu_jammy__source ]
+  H:
+    bin:
+      - [ uJ64, ubuntu_jammy_amd64__binary ]
+      - [ ujv8_uJv8, ubuntu_jammy_arm64__binary ]
+      - [ rhel_el864, rhel_8_x86_64__binary ]
+    dev:
+      - [ "", ubuntu_jammy_amd64 ]
+    doc:
+      - [ "", ubuntu_jammy_amd64 ]
+    src:
+      - [ el8, rhel_8__source ]
+      - [ uJ, ubuntu_jammy__source ]
+  G:
+    bin:
+      - [ uF64, ubuntu_focal_amd64__binary ]
+      - [ rhel_el864, rhel_8_x86_64__binary ]
+    dev:
+      - [ "", ubuntu_focal_amd64 ]
+    doc:
+    src:
+      - [ el8, rhel_8__source ]
+      - [ uF, ubuntu_focal__source ]
+  F:
+    bin:
+      - [ uF64, ubuntu_focal_amd64__binary ]
+    dev:
+      - [ "", ubuntu_focal_amd64 ]
+    doc:
+    src:
+      - [ uF, ubuntu_focal__source ]
+templates:
+  dev:
+    - ["", __ubuntu_jammy_amd64]
+  doc:
+    - [ "", ubuntu_jammy_amd64 ]
+  bin:
+    - [ rhel_el864, rhel_8_x86_64__binary ]
+    - [ ubv8_uFv8, ubuntu_focal_arm64__binary ]
+    - [ uF64, ubuntu_focal_amd64__binary ]
+    - [ ufv8_uFv8, ubuntu_focal_arm64__binary ]
+    - [ uJ64, ubuntu_jammy_amd64__binary ]
+    - [ ujv8_uJv8, ubuntu_jammy_arm64__binary ]
+  src:
+    - [el8, rhel_8__source]
+    - [uF, ubuntu_focal__source]
+    - [uJ, ubuntu_jammy__source]
+
+
+
+
