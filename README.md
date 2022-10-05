@@ -5,7 +5,7 @@
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 ![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
 
-The OpenRMF platform for multi-fleet robot management.
+The Open-RMF platform for multi-fleet robot management.
 
 ---
 
@@ -37,7 +37,7 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 ## Binary install
 
-Latest OpenRMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most OpenRMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
+Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
 
 ```bash
 apt-cache search ros-humble-rmf
@@ -45,7 +45,7 @@ apt-cache search ros-humble-rmf
 
 ### RMF Demos
 
-A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the OpenRMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:
+A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:
 
 ```bash
 sudo apt install ros-humble-rmf-demos-gz-classic
@@ -164,24 +164,19 @@ This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.gi
 
 ## Run RMF Demos
 
-Demonstrations of OpenRMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
+Demonstrations of Open-RMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
 ## Roadmap
 
-A near-term roadmap of the entire OpenRMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
+A near-term roadmap of the entire Open-RMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
 
 ## Integrating with RMF
 
-Instructions on how to integrate your system with OpenRMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
+Instructions on how to integrate your system with Open-RMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
 
-## Open sourced fleet adapters
+## Open sourced adapters
 
-A number of commercial robots have been integrated with RMF and links to their adapters are available below.
-
-- [Gaussian Ecobots](https://github.com/open-rmf/fleet_adapter_ecobot)
-- [OTTO Motors](https://github.com/open-rmf/fleet_adapter_clearpath) (and robots running the Clearpath Autonomy stack)
-- [Mobile Industrial Robots: MiR](https://github.com/osrf/fleet_adapter_mir)
-- [Temi- the personal robot](https://github.com/open-rmf/temi_fleet_adapter_python)
+A number of commercial robots, infrastructure systems, workcells and devices have been integrated with Open-RMF and links to their adapters are available in the [awesome_adapter](https://github.com/open-rmf/awesome_adapters) repository
 
 Help us add to this list!
 
