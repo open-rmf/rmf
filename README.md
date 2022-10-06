@@ -63,7 +63,7 @@ Install all non-ROS dependencies of OpenRMF packages,
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   -y
-python3 -m pip install flask-socketio fastapi uvicorn
+python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator
 sudo apt-get install python3-colcon*
 ```
 
