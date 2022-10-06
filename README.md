@@ -9,6 +9,49 @@ The Open-RMF platform for multi-fleet robot management.
 
 ---
 
+## Architecture
+```mermaid
+flowchart LR
+    subgraph rmf
+        subgraph rmf_core
+            rmf_traffic
+            rmf_task
+            rmf_fleet_adapter
+            rmf_utils
+        end
+        subgraph rmf_msgs
+            rmf_internal_msgs
+            rmf_api_msgs
+            rmf_visualization_msgs
+            rmf_building_map_msgs
+        end
+        rmf_core --> rmf_msgs
+        subgraph rmf_ros2
+            rmf_traffic_ros2
+            rmf_fleet_adapter_ros2
+            rmf_fleet_adapter_python_ros2
+            rmf_task_ros2
+    
+        end
+        rmf_ros2 --> rmf_core
+        rmf_simulation --> rmf_ros2
+        subgraph rmf_visualization
+            rmf_visualization_building_systems
+            rmf_visualization_fleet_states
+            rmf_visualization_rviz2_plugins
+            rmf_visualization_schedule
+        end
+        rmf_visualization --> rmf_core
+    end
+    subgraph libs
+        pybind11_json_vendor
+        nlohmann_json_schema_validator_vendor
+        ament_cmake_catch2
+    end
+    rmf --> libs
+    rmf-web --> rmf
+```
+
 For specific rmf versions follow the instructions given below:
 
 ## Installation Instructions
