@@ -1,6 +1,5 @@
 name: nightly
 on: 
-  push:
   pull_request:
   schedule:
     - cron: '1 8 * * *'
