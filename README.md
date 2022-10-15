@@ -50,7 +50,7 @@ A good way to install the `rmf` set of packages in one go is to install the one 
 ```bash
 sudo apt install ros-humble-rmf-demos-gz-classic
 ```
-
+**Note:** RMF Demos cannot be installed on Humble distro because of an underlying issue with the release of a bad version of fastapi in jammy. You can install the package from source. [Read more.](https://github.com/open-rmf/rmf_demos/issues/166)
 ## Building from sources
 
 If you want to get the latest developments you might want to install from sources and compile OpenRMF yourself.
