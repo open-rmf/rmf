@@ -37,7 +37,7 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 ## Binary install
 
-Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
+Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
 
 ```bash
 apt-cache search ros-humble-rmf
@@ -45,12 +45,18 @@ apt-cache search ros-humble-rmf
 
 ### RMF Demos
 
-A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:
+**Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
+It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
+Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
 
-```bash
-sudo apt install ros-humble-rmf-demos-gz-classic
-```
-**Note:** RMF Demos cannot be installed on Humble distro because of an underlying issue with the release of a bad version of fastapi in jammy. You can install the package from source. [Read more.](https://github.com/open-rmf/rmf_demos/issues/166)
+[//]: # (A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos]&#40;https://github.com/open-rmf/rmf_demos&#41; packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of Open-RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (sudo apt install ros-humble-rmf-demos-gz-classic)
+[//]: # (```)
+
 ## Building from sources
 
 If you want to get the latest developments you might want to install from sources and compile OpenRMF yourself.
