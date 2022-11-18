@@ -11,6 +11,10 @@ repositories:
     type: git
     url: https://github.com/open-rmf/rmf_api_msgs.git
     version: main
+  rmf/rmf_obstacle_detectors:
+    type: git
+    url: https://github.com/open-rmf/rmf_obstacle_detectors.git
+    version: main
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
