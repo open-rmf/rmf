@@ -1,28 +1,17 @@
-# Robotics Middleware Framework (RMF)
-
-![](media/rmf_banner.png)
+# Open-RMF 21.09
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
+
 ![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
 
-The Open-RMF platform for multi-fleet robot management.
+The OpenRMF platform for multi-fleet robot management.
 
 ---
 
-For specific rmf versions follow the instructions given below:
-
 ## Installation Instructions
 
-These are the current Open-RMF binary releases available:
-
-| RMF Version | Installation Instructions                                                        | Supported distros                                    | Supported ROS2 versions |
-| ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
-| 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic          |
-
-## Install ROS 2 Humble
-
-First, please follow the installation instructions for ROS 2 Humble.
-If you are on an Ubuntu 22.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
+First, please follow the installation instructions for ROS 2 Humble,
+[here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
 ## Setup Gazebo repositories
 
@@ -35,21 +24,11 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 ```
 
-## Binary install
-
-Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
-
-```bash
-apt-cache search ros-humble-rmf
-```
-
 ### RMF Demos
 
-A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos](https://github.com/open-rmf/rmf_demos) packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:
-
-```bash
-sudo apt install ros-humble-rmf-demos-gz-classic
-```
+**Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
+It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
+Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
 
 ## Building from sources
 
@@ -63,7 +42,7 @@ Install all non-ROS dependencies of OpenRMF packages,
 sudo apt update && sudo apt install \
   git cmake python3-vcstool curl \
   -y
-python3 -m pip install flask-socketio fastapi uvicorn
+python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator
 sudo apt-get install python3-colcon*
 ```
 
@@ -140,7 +119,7 @@ colcon build --mixin release lld
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 > As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
 
-### Docker Containers
+## Docker Containers
 
 Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
 
@@ -166,18 +145,25 @@ This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.gi
 
 Demonstrations of Open-RMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
-## Roadmap
+## Package Information
 
-A near-term roadmap of the entire Open-RMF project (including and beyond `rmf_traffic`) can be found in the user manual [here](https://osrf.github.io/ros2multirobotbook/roadmap.html).
+| Packages                                         | Github link                                                                   | Version |
+|--------------------------------------------------|-------------------------------------------------------------------------------|---------|
+| rmf/ament_cmake_catch2                           | https://github.com/open-rmf/ament_cmake_catch2/tree/humble                    | humble  |
+| rmf/rmf_api_msgs                                 | https://github.com/open-rmf/rmf_api_msgs/tree/humble                          | humble  |
+| rmf/rmf_battery                                  | https://github.com/open-rmf/rmf_battery/tree/humble                           | humble  |
+| rmf/rmf_building_map_msgs                        | https://github.com/open-rmf/rmf_building_map_msgs/tree/humble                 | humble  |
+| rmf/rmf_internal_msgs                            | https://github.com/open-rmf/rmf_internal_msgs/tree/humble                     | humble  |
+| rmf/rmf_ros2                                     | https://github.com/open-rmf/rmf_ros2/tree/humble                              | humble  |
+| rmf/rmf_simulation                               | https://github.com/open-rmf/rmf_simulation/tree/humble                        | humble  |
+| rmf/rmf_task                                     | https://github.com/open-rmf/rmf_task/tree/humble                              | humble  |
+| rmf/rmf_traffic                                  | https://github.com/open-rmf/rmf_traffic/tree/humble                           | humble  |
+| rmf/rmf_traffic_editor                           | https://github.com/open-rmf/rmf_traffic_editor/tree/humble                    | humble  |
+| rmf/rmf_utils                                    | https://github.com/open-rmf/rmf_utils/tree/humble                             | humble  |
+| rmf/rmf_visualization                            | https://github.com/open-rmf/rmf_visualization/tree/humble                     | humble  |
+| rmf/rmf_visualization_msgs                       | https://github.com/open-rmf/rmf_visualization_msgs/tree/humble                | humble  |
+| demonstrations/rmf_demos                         | https://github.com/open-rmf/rmf_demos/tree/humble                             | humble  |
+| thirdparty/menge_vendor                          | https://github.com/open-rmf/menge_vendor/tree/humble                          | humble  |
+| thirdparty/nlohmann_json_schema_validator_vendor | https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/tree/humble | humble  |
+| thirdparty/pybind11_json_vendor                  | https://github.com/open-rmf/pybind11_json_vendor/tree/humble                  | humble  |
 
-## Integrating with RMF
-
-Instructions on how to integrate your system with Open-RMF can be found [here](https://osrf.github.io/ros2multirobotbook/integration.html).
-
-## Open sourced adapters
-
-A number of commercial robots, infrastructure systems, workcells and devices have been integrated with Open-RMF and links to their adapters are available in the [awesome_adapter](https://github.com/open-rmf/awesome_adapters) repository
-
-Help us add to this list!
-
-A helpful starting point for integrating your fleet with RMF is the [fleet_adapter_template](https://github.com/open-rmf/free_fleet) package.
