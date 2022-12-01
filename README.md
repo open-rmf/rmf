@@ -4,7 +4,7 @@
 
 ![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
 
-The OpenRMF platform for multi-fleet robot management.
+The Open-RMF platform for multi-fleet robot management.
 
 ---
 
@@ -53,11 +53,11 @@ ros2 launch rmf_visualization visualization.launch.xml
 
 ## Building from sources
 
-If you want to get the latest developments you might want to install from sources and compile OpenRMF yourself.
+If you prefer to compile Open-RMF yourself you can follow these steps.
 
 ### Additional Dependencies
 
-Install all non-ROS dependencies of OpenRMF packages,
+Install all non-ROS dependencies of Open-RMF packages,
 
 ```bash
 sudo apt update && sudo apt install \
@@ -79,23 +79,16 @@ rosdep update
 
 ### Download the source code
 
-> Note all repositories now have a `galactic-devel` branch. New changes will be targeted for `ROS2 Humble`. If any change is compatible with `ROS2 galactic` they will be backported to the `galactic-devel` branch.
-
-Setup a new ROS 2 workspace and pull in the demo repositories using `vcs`,
+Setup a new ROS 2 workspace and pull in the repositories using `vcs`,
 
 ```bash
 mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
-wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/release/21.09/rmf.repos
 vcs import src < rmf.repos
 ```
 
-Ensure all ROS 2 prerequisites are fulfilled,
-
-you can subsutitute your distro name for `<your ros distro>`
-
-Example:
-for `humble`
+Ensure all ROS 2 prerequisites are fulfilled, for `humble`
 
 ```bash
 cd ~/rmf_ws
@@ -106,16 +99,15 @@ rosdep install --from-paths src --ignore-src --rosdistro humble -y
 
 > NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-humble-rmf*`.
 
-Compiling on `Ubuntu 22.04`:
 
 #### Install clang
 
+**NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
 ```bash
 sudo apt update
 sudo apt install clang lldb lld
 ```
 
-**NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
 
 #### Compile using clang
 
@@ -140,15 +132,25 @@ colcon build --mixin release lld
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 > As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
 
-## Docker Containers
 
-Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
+## Run RMF Demos
+
+Demonstrations of Open-RMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
+
+> **Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
+It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
+Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
+
+
+### Docker Containers
+
+Alternatively, you can run Open-RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
 
 Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 
 ```bash
-docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
-docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
+docker pull ghcr.io/open-rmf/rmf/rmf_demos:22_09
+docker tag ghcr.io/open-rmf/rmf/rmf_demos:22_09 rmf:latest
 ```
 
 Run it!
@@ -157,14 +159,10 @@ Run it!
 
 docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
-
 This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
-## Run RMF Demos
-
-Demonstrations of Open-RMF are shown in [rmf_demos](https://github.com/open-rmf/rmf_demos/).
 
 ## Package Information
 
