@@ -24,11 +24,32 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 ```
 
-### RMF Demos
+## Binary installation
 
-**Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
-It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
-Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
+All software required for Open-RMF is available as packages in the official ROS2 Humble repository.
+
+You can search for all available packages with 
+sudo apt search ros-humble-rmf
+
+Installing this package will install all the necessary dependencies:
+```shell
+sudo apt install ros-humble-rmf-visualization 
+```
+
+If you use `Gazebo classic` for simulations you will also need to install
+```shell
+sudo apt install ros-humble-rmf-robot-sim-gz-classic-plugins ros-humble-rmf-building-sim-gz-classic-plugins
+```
+
+On the other hand, if you use `Gazebo` you must install
+```shell
+sudo apt install ros-humble-rmf-robot-sim-gz-plugins ros-humble-rmf-building-sim-gz-plugins
+```
+
+To check your installation you can run:
+```shell
+ros2 launch rmf_visualization visualization.launch.xml
+```
 
 ## Building from sources
 
