@@ -10,6 +10,8 @@ jobs:
     name: rmf_all
     uses: open-rmf/rmf_ci_templates/.github/workflows/reusable_build.yaml@main
     with:
+      # Avoid execution on [foxy|galactic] focal (
+      dist-matrix: '[{"ros_distribution": "humble", "ubuntu_distribution": "jammy"}, {"ros_distribution": "rolling", "ubuntu_distribution": "jammy"}]'
       # NOTE: Avoid adding comments in the packages lines, this can break some of the called scripts in github actions
       packages: |
         rmf_utils
