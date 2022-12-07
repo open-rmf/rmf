@@ -1,80 +1,45 @@
-name: nightly
+name: nightly build
 on: 
   pull_request:
   schedule:
     - cron: '1 8 * * *'
+  workflow_dispatch:
 
 jobs:
   build_and_test:
-    name: Nightly build and test
-    runs-on: ubuntu-22.04
-    steps:
-      - name: deps
-        uses: ros-tooling/setup-ros@v0.4
-        with:
-          required-ros-distributions: humble
-      - name: setup clang
-        run: |
-          sudo apt update && sudo apt install -y clang lldb lld
-          sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
-      - uses: actions/checkout@v2
-      - name: build_and_test
-        uses: ros-tooling/action-ros-ci@v0.2
-        env:
-          QT_QPA_PLATFORM: offscreen
-        with:
-          target-ros2-distro: humble
-          # build all packages listed in the meta package
-          package-name: |
-            rmf_utils
-            rmf_traffic
-            rmf_task
-            rmf_battery
-            rmf_fleet_adapter
-            rmf_fleet_adapter_python
-            rmf_task_ros2
-            rmf_traffic_ros2
-            rmf_visualization
-            rmf_visualization_building_systems
-            rmf_visualization_fleet_states
-            rmf_visualization_rviz2_plugins
-            rmf_visualization_schedule
-            rmf_building_sim_common
-            rmf_building_sim_gz_plugins
-            rmf_building_sim_gz_classic_plugins
-            rmf_robot_sim_common
-            rmf_robot_sim_gz_plugins
-            rmf_robot_sim_gz_classic_plugins
-            rmf_building_map_tools
-            rmf_traffic_editor
-            rmf_traffic_editor_assets
-            rmf_traffic_editor_test_maps
-            rmf_demos
-            rmf_demos_gz
-            rmf_demos_gz_classic
-            rmf_demos_assets
-            rmf_demos_dashboard_resources
-            rmf_demos_maps
-            rmf_demos_panel
-            rmf_demos_tasks
-          vcs-repo-file-url: |
-            rmf.repos
-          colcon-defaults: |
-            {
-              "build": {
-                "mixin": ["coverage-gcc"]
-              }
-            }
-          colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
-      - name: Upload build logs
-        uses: actions/upload-artifact@v2
-        with:
-          name: colcon-build-logs
-          path: ${{ steps.action_ros_ci_step.outputs.ros-workspace-directory-name }}/log
-        if: always()
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          files: ros_ws/lcov/total_coverage.info
-          flags: tests
-          name: lean_and_mean_codecov_bot
+    name: rmf_all
+    uses: open-rmf/rmf_ci_templates/.github/workflows/reusable_build.yaml@main
+    with:
+      # NOTE: Avoid adding comments in the packages lines, this can break some of the called scripts in github actions
+      packages: |
+        rmf_utils
+        rmf_traffic
+        rmf_task
+        rmf_battery
+        rmf_fleet_adapter
+        rmf_fleet_adapter_python
+        rmf_task_ros2
+        rmf_traffic_ros2
+        rmf_visualization
+        rmf_visualization_building_systems
+        rmf_visualization_fleet_states
+        rmf_visualization_rviz2_plugins
+        rmf_visualization_schedule
+        rmf_building_sim_common
+        rmf_building_sim_gz_plugins
+        rmf_building_sim_gz_classic_plugins
+        rmf_robot_sim_common
+        rmf_robot_sim_gz_plugins
+        rmf_robot_sim_gz_classic_plugins
+        rmf_building_map_tools
+        rmf_traffic_editor
+        rmf_traffic_editor_assets
+        rmf_traffic_editor_test_maps
+        rmf_demos
+        rmf_demos_gz
+        rmf_demos_gz_classic
+        rmf_demos_assets
+        rmf_demos_dashboard_resources
+        rmf_demos_maps
+        rmf_demos_panel
+        rmf_demos_tasks
