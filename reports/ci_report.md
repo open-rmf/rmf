@@ -23,7 +23,9 @@ The way to sort it is first the ones that are failing, then the one passing and 
 [ rmf_simulation build ![NONE](https://github.com/open-rmf/rmf_simulation/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/rmf_simulation/actions/workflows/build.yaml)  
 [ rmf_traffic_editor build ![NONE](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/build.yaml)  
 [ rmf_demos build ![NONE](https://github.com/open-rmf/rmf_demos/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/rmf_demos/actions/workflows/build.yaml)  
-[ nlohmann_json_schema_validator_vendor build ![NONE](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/build.yaml) Pending PR https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/pull/8   
+[ nlohmann_json_schema_validator_vendor build ![NONE](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/build.yaml)  
+[ pybind11_json_vendor build ![NONE](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/build.yaml)  
+[ rmf_api_msgs build ![NONE](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/build.yaml/badge.svg)](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/build.yaml) 
 
 ## ASAN
 [ rmf_battery build ![NONE](https://github.com/open-rmf/rmf_battery/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/rmf_battery/actions/workflows/asan.yaml)  
@@ -37,6 +39,8 @@ The way to sort it is first the ones that are failing, then the one passing and 
 [ rmf_traffic_editor build ![NONE](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/asan.yaml)  
 [ rmf_demos build ![NONE](https://github.com/open-rmf/rmf_demos/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/rmf_demos/actions/workflows/asan.yaml)   
 [ nlohmann_json_schema_validator_vendor build ![NONE](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/asan.yaml)   
+[ pybind11_json_vendor build ![NONE](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/asan.yaml)   
+[ rmf_api_msgs build ![NONE](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/asan.yaml/badge.svg)](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/asan.yaml)   
 
 ## TSAN
 [ rmf_battery build ![NONE](https://github.com/open-rmf/rmf_battery/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/rmf_battery/actions/workflows/tsan.yaml)  
@@ -51,6 +55,8 @@ The way to sort it is first the ones that are failing, then the one passing and 
 [ rmf_traffic_editor build ![NONE](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/tsan.yaml)  
 [ rmf_demos build ![NONE](https://github.com/open-rmf/rmf_demos/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/rmf_demos/actions/workflows/tsan.yaml)   
 [ nlohmann_json_schema_validator_vendor build ![NONE](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/tsan.yaml)   
+[ pybind11_json_vendor build ![NONE](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/tsan.yaml)   
+[ rmf_api_msgs build ![NONE](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/tsan.yaml/badge.svg)](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/tsan.yaml)   
 
 ## Style
 [ rmf_battery build ![NONE](https://github.com/open-rmf/rmf_battery/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/rmf_battery/actions/workflows/style.yaml)  
@@ -65,4 +71,6 @@ The way to sort it is first the ones that are failing, then the one passing and 
 [ rmf_traffic_editor build ![NONE](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/rmf_traffic_editor/actions/workflows/style.yaml)  
 [ rmf_demos build ![NONE](https://github.com/open-rmf/rmf_demos/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/rmf_demos/actions/workflows/style.yaml)   
 [ nlohmann_json_schema_validator_vendor build ![NONE](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/nlohmann_json_schema_validator_vendor/actions/workflows/style.yaml)   
+[ pybind11_json_vendor build ![NONE](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/pybind11_json_vendor/actions/workflows/style.yaml)   
+[ rmf_api_msgs build ![NONE](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/style.yaml/badge.svg)](https://github.com/open-rmf/rmf_api_msgs/actions/workflows/style.yaml)   
 
