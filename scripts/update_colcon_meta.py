@@ -19,11 +19,6 @@ def print_ok(msg: str):
     # blue
     print(f"\033[94m{msg}\033[0m")
 
-
-if len(sys.argv) != 2:
-    print("Usage: python3 update_colcon_meta.py <path-to-rmf-workspace>")
-    exit(1)
-
 here = os.path.dirname(__file__)
 with open(f"{here}/../colcon.meta", "r+") as f:
     colcon_meta = yaml.safe_load(f) or {}
