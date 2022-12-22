@@ -1,0 +1,351 @@
+names:
+  ament_cmake_catch2:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  nlohmann_json_schema_validator_vendor:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  pybind11_json_vendor:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_api_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_battery:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_building_map_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_building_sim_common:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_building_sim_gz_classic_plugins:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_building_sim_gz_plugins:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_charger_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos_assets:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos_dashboard_resources:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos_gz:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos_gz_classic:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_demos_maps:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_dispenser_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_door_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_fleet_adapter:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_fleet_adapter_python:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_fleet_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_ingestor_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_lift_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_obstacle_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_robot_sim_common:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_robot_sim_gz_classic_plugins:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_robot_sim_gz_plugins:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_scheduler_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_site_map_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_task:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_task_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_task_ros2:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_task_sequence:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic_editor:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic_editor_test_maps:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic_examples:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_traffic_ros2:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_utils:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_fleet_states:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_floorplans:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_navgraphs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_obstacles:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_rviz2_plugins:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_visualization_schedule:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_websocket:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld
+  rmf_workcell_msgs:
+    cmake-args:
+    - -DCMAKE_CXX_COMPILER=clang++
+    - -DCMAKE_C_COMPILER=clang
+    - -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld
+    - -DCMAKE_MODULE_LINKER_FLAGS=-fuse-ld=lld

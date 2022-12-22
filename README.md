@@ -125,22 +125,26 @@ sudo apt install clang lldb lld
 
 #### Compile using clang
 
-Update colcon mixin which is a one time step:
+A `colcon.meta` file is available to help add all the required cmake arguments to use clang, get it with
 
 ```bash
-colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
-colcon mixin update default
+wget https://raw.githubusercontent.com/open-rmf/rmf/main/colcon.meta
 ```
+
+> NOTE: Make sure that the colcon.meta file is in the workspace root, your workspace should like
+> <div style="padding: 8px; border-style: solid; border-radius: 8px; border-width: thin; width: 10em">
+>   colcon.meta<br/>
+>   src<br/>
+>   <span style="margin-left: 2em">demonstrations</span><br/>
+>   <span style="margin-left: 2em">rmf</span><br/>
+>   <span style="margin-left: 2em">thirdparty</span><br/>
+> </div>
+> <br/>
 
 Compile the workspace:
 
 ```bash
-cd ~/rmf_ws
-source /opt/ros/humble/setup.bash
-
-export CXX=clang++
-export CC=clang
-colcon build --mixin release lld
+colcon build
 ```
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
