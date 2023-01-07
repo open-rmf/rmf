@@ -118,7 +118,7 @@ Compiling on `Ubuntu 22.04`:
 
 ```bash
 sudo apt update
-sudo apt install clang clang-tools lld libstdc++-12-dev
+sudo apt install clang clang-tools lldb lld libstdc++-12-dev
 ```
 
 **NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
