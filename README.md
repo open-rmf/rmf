@@ -1,4 +1,4 @@
-# Robotics Middleware Framework (RMF)
+# Robotics Middleware Framework (Open-RMF)
 
 ![](media/rmf_banner.png)
 
@@ -9,22 +9,25 @@ The Open-RMF platform for multi-fleet robot management.
 
 ---
 
-For specific rmf versions follow the instructions given below:
-
-## Installation Instructions
-
 These are the current Open-RMF binary releases available:
 
 | RMF Version | Installation Instructions                                                        | Supported distros                                    | Supported ROS2 versions |
 | ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
-| 21.09       |  [Installation instructions](https://github.com/open-rmf/rmf/tree/release/21.09) | Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only) | Foxy, Galactic          |
+| 22.09       |  [Install RMF 22.09](https://github.com/open-rmf/rmf/tree/release/22.09) | Ubuntu 22.04, RHEL 8 (deployment only) | Humble          |
+| ~~21.09~~ (EOL) |  ~~[Install RMF 21.09](https://github.com/open-rmf/rmf/tree/release/21.09)~~ | ~~Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only)~~ | ~~Foxy, Galactic~~        |
 
-## Install ROS 2 Humble
+## Installation Instructions
+
+Even though binary versions are avilable, given the fast development and frequent updates to Open-RMF,
+it is hevily recommended to follow instructions here and **install from
+source**.
+
+### Install ROS 2 Humble
 
 First, please follow the installation instructions for ROS 2 Humble.
 If you are on an Ubuntu 22.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
-## Setup Gazebo repositories
+### Setup Gazebo repositories
 
 Setup your computer to accept Gazebo packages from packages.osrfoundation.org.
 
@@ -35,35 +38,13 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 ```
 
-## Binary install
+### Building from sources (Recommended)
 
-Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
+In order to get the latest developments we recommend you to install from sources and compile Open-RMF yourself.
 
-```bash
-apt-cache search ros-humble-rmf
-```
+#### Additional Dependencies
 
-### RMF Demos
-
-**Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
-It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
-Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
-
-[//]: # (A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos]&#40;https://github.com/open-rmf/rmf_demos&#41; packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of Open-RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (sudo apt install ros-humble-rmf-demos-gz-classic)
-[//]: # (```)
-
-## Building from sources
-
-If you want to get the latest developments you might want to install from sources and compile OpenRMF yourself.
-
-### Additional Dependencies
-
-Install all non-ROS dependencies of OpenRMF packages,
+Install all non-ROS dependencies of Open-RMF packages,
 
 ```bash
 sudo apt update && sudo apt install \
@@ -73,7 +54,7 @@ python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator
 sudo apt-get install python3-colcon*
 ```
 
-### Install rosdep
+#### Install rosdep
 
 `rosdep` helps install dependencies for ROS packages across various distros. It can be installed with:
 
@@ -83,7 +64,7 @@ sudo rosdep init
 rosdep update
 ```
 
-### Download the source code
+#### Download the source code
 
 > Note all repositories now have a `galactic-devel` branch. New changes will be targeted for `ROS2 Humble`. If any change is compatible with `ROS2 galactic` they will be backported to the `galactic-devel` branch.
 
@@ -108,13 +89,13 @@ cd ~/rmf_ws
 rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
-### Compiling Instructions
+#### Compiling Instructions
 
 > NOTE: Due to newer changes in the source build, there might be conflicts and compilation errors with older header files installed by the binaries. Please remove the binary installations before building from source, using `sudo apt remove ros-humble-rmf*`.
 
 Compiling on `Ubuntu 22.04`:
 
-#### Install clang
+##### Install clang
 
 ```bash
 sudo apt update
@@ -123,7 +104,7 @@ sudo apt install clang clang-tools lldb lld libstdc++-12-dev
 
 **NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
 
-#### Compile using clang
+##### Compile using clang
 
 Update colcon mixin which is a one time step:
 
@@ -145,6 +126,28 @@ colcon build --mixin release lld
 
 > NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
 > As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
+
+### Binary install
+
+Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Humble` and `Rolling` releases of ROS 2. Older releases are also available on Ubuntu Focal 20.04 for `Foxy` and `Galactic`. Most Open-RMF packages have the prefix `rmf` on their name, therefore, you can find them by searching for the pattern `ros-<ro2distro>-rmf`, e.g., for humble it would be:
+
+```bash
+apt-cache search ros-humble-rmf
+```
+
+#### RMF Demos
+
+**Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
+It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
+Please follow the instructions in the [Additional Dependencies](#additional-dependencies) section to install `fastapi` along with other dependencies needed to run Open-RMF demos.
+
+[//]: # (A good way to install the `rmf` set of packages in one go is to install the one of the main [RMF Demos]&#40;https://github.com/open-rmf/rmf_demos&#41; packages. This will pull all the rest of the Open-RMF packages as a dependency. The core of Open-RMF demos is contained on the `rmf_demos` package. However, if you want to install it with simulation support, you should install the `rmf_demos_gz` or `rmf_demos_gz_classic` package which come with Gazebo or Gazebo Classic support respectively. As an example, to install the ROS 2 Humble release with Gazebo support package, you would run:)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (sudo apt install ros-humble-rmf-demos-gz-classic)
+[//]: # (```)
 
 ### Docker Containers
 
