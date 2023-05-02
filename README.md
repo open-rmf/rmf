@@ -88,7 +88,7 @@ Setup a new ROS 2 workspace and pull in the repositories using `vcs`,
 ```bash
 mkdir -p ~/rmf_ws/src
 cd ~/rmf_ws
-wget https://raw.githubusercontent.com/open-rmf/release/21.09/rmf.repos
+wget https://raw.githubusercontent.com/open-rmf/rmf/release/22.09/rmf.repos
 vcs import src < rmf.repos
 ```
 
