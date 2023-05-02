@@ -1,4 +1,6 @@
-# Open-RMF 21.09
+# Open-RMF 21.09 (End of Life)
+
+## Note that this release has reached end of life and it is NOT SUPPORTED.
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 
