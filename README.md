@@ -19,7 +19,7 @@ These are the current Open-RMF binary releases available:
 ## Installation Instructions
 
 Even though binary versions are avilable, given the fast development and frequent updates to Open-RMF,
-it is hevily recommended to follow instructions here and **install from
+it is heavily recommended to follow instructions here and **install from
 source**.
 
 ### Install ROS 2 Humble
