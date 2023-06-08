@@ -9,27 +9,28 @@ The Open-RMF platform for multi-fleet robot management.
 
 ---
 
-These are the current Open-RMF binary releases available:
-
-| RMF Version | Installation Instructions                                                        | Supported distros                                    | Supported ROS2 versions |
-| ----------- | -------------------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------- |
-| 22.09       |  [Install RMF 22.09](https://github.com/open-rmf/rmf/tree/release/22.09) | Ubuntu 22.04, RHEL 8 (deployment only) | Humble          |
-| ~~21.09~~ (EOL) |  ~~[Install RMF 21.09](https://github.com/open-rmf/rmf/tree/release/21.09)~~ | ~~Ubuntu 20.04, Ubuntu 21.09, RHEL 8 (deployment only)~~ | ~~Foxy, Galactic~~        |
-
 ## Installation Instructions
 
-Even though binary versions are avilable, given the fast development and frequent updates to Open-RMF,
-it is heavily recommended to follow instructions bellow and **install from
-source**.
+Open-RMF is a collection of packages, some of which have ROS 2 dependencies.
+For convenience, we distribute and install Open-RMF along with ROS 2 and is currently supported for the following ROS 2 distributions:
+* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
+* [Humble Hawksbill](https://docs.ros.org/en/humble/index.html) (`humble`)
+* [Rolling Ridley](https://docs.ros.org/en/rolling/index.html) (`rolling`)
 
-### Install ROS 2 Humble
+We primarily support Debian packages on `Ubuntu Linux - Jammy Jellyfish (22.04)` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
 
-First, please follow the installation instructions for ROS 2 Humble.
-If you are on an Ubuntu 22.04 LTS machine (as recommended), [here is the binary install page for ROS 2 Humble on Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
+Options for installing Open-RMF:
+* [Binary packages (recommended)](#binary-packages)
+* [Building from source](#building-from-source)
 
-### Setup Gazebo repositories
+If you want to try Open-RMF we recommend installing the binaries. Building from source is better suited for developers who wish to add new features or fix bugs.
 
-Setup your computer to accept Gazebo packages from packages.osrfoundation.org.
+### Setup
+Instruction below are aimed at `Ubuntu 22.04`.
+
+First please follow the installation instructions to install the ROS 2 debian packages for the `distro` of choice from supported versions listed above.
+
+Next, setup your computer to accept `Gazebo` packages from `packages.osrfoundation.org`.
 
 ```bash
 sudo apt update
@@ -38,7 +39,41 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 ```
 
-### Building from sources (Recommended)
+### Binary packages
+First follow the [setup instructions](#setup).
+Finally install Open-RMF debian packages for the `distro` of choice.
+
+```bash
+sudo apt update && sudo apt install ros-<distro>-rmf-dev
+```
+
+This will install all necessary debian packages to run Open-RMF.
+To try out some demonstrations, follow [these instructions](#rmf-demos).
+
+### Building from source
+First follow the [setup instructions](#setup).
+Before proceeding, ensure that you not have any Open-RMF binaries installed on your system.
+```bash
+# optional
+sudo apt purge ros-<distro>-rmf* && sudo apt autoremove
+```
+
+Install `rosdep` which helps to install dependencies for ROS packages across various distros
+
+```bash
+sudo apt install python3-rosdep
+sudo rosdep init
+rosdep update
+```
+
+
+```bash
+sudo apt update && sudo apt install \
+  git cmake python3-vcstool python3-pip curl \
+  -y
+python3 -m pip install flask-socketio fastapi uvicorn datamodel_code_generator
+sudo apt-get install python3-colcon*
+```
 
 In order to get the latest developments we recommend you to install from sources and compile Open-RMF yourself.
 
@@ -135,7 +170,7 @@ Latest Open-RMF binary packages are available for Ubuntu Jammy 22.04 for the `Hu
 apt-cache search ros-humble-rmf
 ```
 
-#### RMF Demos
+## RMF Demos for binary installs
 
 **Note:** RMF Demos package cannot be installed on Humble distro because of an underlying [issue](https://github.com/open-rmf/rmf_demos/issues/166) with the release of a bad version of fastapi in jammy. You can install the package from [source](https://github.com/open-rmf/rmf/discussions/267).
 It is important to have `fastapi` installed via `pip` and not as an Ubuntu system package (ie, via `apt install`) for the reasons documented above.
