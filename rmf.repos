@@ -2,68 +2,68 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
-    version: iron
+    version: 2.1.0
   rmf/ament_cmake_catch2:
     type: git
     url: https://github.com/open-rmf/ament_cmake_catch2.git
-    version: iron
+    version: 1.3.0
   rmf/rmf_api_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_api_msgs.git
-    version: iron
+    version: 0.1.0
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
-    version: iron
+    version: 0.2.0
   rmf/rmf_building_map_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_building_map_msgs.git
-    version: iron
+    version: 1.3.0
   rmf/rmf_internal_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
-    version: iron
+    version: 3.1.0
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: iron
+    version: 2.2.0
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
-    version: iron
+    version: 2.1.0
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: iron
+    version: 2.2.0
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
-    version: iron
+    version: 3.1.0
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
-    version: iron
+    version: 1.7.0
   rmf/rmf_utils:
     type: git
     url: https://github.com/open-rmf/rmf_utils.git
-    version: iron
+    version: 1.5.0
   rmf/rmf_visualization:
     type: git
     url: https://github.com/open-rmf/rmf_visualization.git
-    version: iron
+    version: 2.1.0
   rmf/rmf_visualization_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_visualization_msgs.git
-    version: iron
+    version: 1.3.0
   thirdparty/menge_vendor:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
-    version: iron
+    version: 1.1.0
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
     url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
-    version: iron
+    version: 0.3.0
   thirdparty/pybind11_json_vendor:
     type: git
     url: https://github.com/open-rmf/pybind11_json_vendor.git
-    version: iron
+    version: 0.3.0
