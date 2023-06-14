@@ -77,7 +77,7 @@ sudo apt update && sudo apt install ros-<distro>-rmf-dev
 To build `rmf_demos` from source, first determine the version of `rmf_demos` that corresponds to the latest binary release for your distro.
 For example, if you installed the `humble` binaries of Open-RMF, the version of `rmf_demos` for this release can be found in the `rmf.repos` file in the `humble-release` branch of this repository, ie, [here](https://github.com/open-rmf/rmf/blob/591b0b9f34a021d81522a0af6f42ffcb5fc70293/rmf.repos#L5)
 
-Next create a workspace and build `rmf_demos` from source.
+Next create a ROS 2 workspace and build `rmf_demos` from source.
 Replace the `2.0.3` tag below with the version of `rmf_demos` for your distribution.
 
 ```bash
