@@ -75,7 +75,7 @@ sudo apt update && sudo apt install ros-<distro>-rmf-dev
 **Note:** This will install all necessary debian packages to run Open-RMF except for those in [rmf_demos](https://github.com/open-rmf/rmf_demos) for reasons described in this [issue](https://github.com/open-rmf/rmf_demos/issues/166).
 
 To build `rmf_demos` from source, first determine the version of `rmf_demos` that corresponds to the latest binary release for your distro.
-For example, if you installed the `humble` binaries of Open-RMF, the version of `rmf_demos` for this release can be found in the `rmf.repos` file in the `humble-release` branch of this repository, ie, [here](https://github.com/open-rmf/rmf/blob/591b0b9f34a021d81522a0af6f42ffcb5fc70293/rmf.repos#L5)
+For example, if you installed the `humble` binaries of Open-RMF, the version of `rmf_demos` for this release can be found in the `rmf.repos` file in the `humble-release` branch of this repository, for example [here](https://github.com/open-rmf/rmf/blob/591b0b9f34a021d81522a0af6f42ffcb5fc70293/rmf.repos#L5).
 
 Next create a ROS 2 workspace and build `rmf_demos` from source.
 Replace the `2.0.3` tag below with the version of `rmf_demos` for your distribution.
