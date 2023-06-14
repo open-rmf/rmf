@@ -19,7 +19,7 @@ The development, versioning and release of Open-RMF follows that of the [ROS 2 p
 
 ### Additional information for maintainers
 * We release into ROS 2 Rolling from the `main` source branch and from `<distro>` branches into supported ROS 2 distributions.
-* Reference this [dashbaord](https://osrf.github.io/osr_dashboard/?distribution=rmf-rolling) to get an overview of Open-RMF repositories with any new commits since the last release.
+* Reference this [dashboard](https://osrf.github.io/osr_dashboard/?distribution=rmf-rolling) to get an overview of Open-RMF repositories with any new commits since the last release.
 * Git `tags` are the most important thing to get right about making a release. A `tag` is associated with a commit and `bloom` will look for new tags in the source branch when making a release. If a commit in a PR was tagged and that PR was squash merged in, the `tag` will not be present in the source branch after the merge.
 * The release repositories for Open-RMF are found in the [ros2-gbp](https://github.com/ros2-gbp) Github organization.
 * Follow [these](https://docs.ros.org/en/rolling/How-To-Guides/Releasing/Releasing-a-Package.html) instructions to release a package and use `catkin_generate_changelogs` to update the changelog files, `catkin_prepare_release` to bump package versions, and `bloom-release` to perform the release for a specified distro. If you do not have access to push the changes directly to the branch, please open a PR. But if the push failed, please ensure to delete any `tags` that were created both locally and upstream before opening the PR.
