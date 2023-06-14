@@ -5,7 +5,7 @@ The development, versioning and release of Open-RMF follows that of the [ROS 2 p
 ### Development and versioning
 * The primary development branch is `main` on all repositories. This is the equivalent to `rolling` in ROS 2. Any `rolling` branches in Open-RMF repos should be ignored as they exist purely for legacy reasons.
 * Repositories also have ROS 2 distro branches, eg., `humble`, containing versions of the packages distributed as a binary for that distro.
-* All new features and bug fixes must target `main`. The changes may be backported  via cherry-picks to one or more distro branches provided there are no API/ABI breaks.
+* All new features and bug fixes must target `main`. The changes may be backported via cherry-picks to one or more distro branches provided there are no API/ABI breaks.
 * The version of packages on `main` must always be higher than on distro branches (at least 1 minor version higher) and newer distro versions must be higher than older ones (again, 1 minor version higher).
 * Only patch version bumps are allowed on distro branches. This is to ensure distro branch versions do not increase higher than newer distros or `main`.
 * Do not update any changelogs.
