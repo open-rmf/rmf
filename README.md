@@ -93,7 +93,7 @@ To run some demonstrations of Open-RMF in simulation, see [README in rmf_demos](
 ### Building from source
 First follow the instruction in the [Setup section](#setup).
 
-Due to newer changes in the source code, there might be conflicts and compilation errors with older header files installed by the binaries.Hence before proceeding, ensure to uninstall all Open-RMF binaries for the ROS 2 distro that will be sourced for the build.
+Due to newer changes in the source code, there might be conflicts and compilation errors with older header files installed by the binaries. Hence before proceeding, make sure to uninstall all Open-RMF binaries for the ROS 2 distro that will be sourced for the build.
 ```bash
 sudo apt purge ros-<distro>-rmf* && sudo apt autoremove
 ```
