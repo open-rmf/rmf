@@ -31,6 +31,8 @@ Instruction below are aimed at `Ubuntu 22.04`.
 First please follow the installation instructions to install ROS 2 for the `distro` of choice from supported versions listed above.
 It is recommended to install ROS 2 via binary debians.
 
+> Note: In order to install Open-RMF binaries, it is important to setup your computer to install ROS packages. This is a [prerequisite step](https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Debians.html#enable-required-repositories) when installing ROS 2 debian binaries.
+
 Install all non-ROS dependencies of Open-RMF packages,
 
 ```bash
