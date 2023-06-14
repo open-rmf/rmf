@@ -124,19 +124,14 @@ cd ~/rmf_ws
 rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
-
-##### Install clang
+**NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
 
 ```bash
 sudo apt update
 sudo apt install clang clang-tools lldb lld libstdc++-12-dev
 ```
 
-**NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
-
-##### Compile using clang
-
-Compile the workspace:
+Compile the workspace after sourcing the ROS 2 distro of choice.
 
 ```bash
 cd ~/rmf_ws
@@ -147,14 +142,15 @@ export CC=clang
 colcon build --mixin release lld
 ```
 
-> NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run.
-> As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes).
+> NOTE: The first time the build occurs, many simulation models will be downloaded from Ignition Fuel to populate the scene when the simulation is run. As a result, the first build can take a very long time depending on the server load and your Internet connection (for example, 60 minutes). To build without downloading models append `--cmake-args -DNO_DOWNLOAD_MODELS=On` to the `colcon build`
+
+To run some demonstrations of Open-RMF in simulation, see [README in rmf_demos](https://github.com/open-rmf/rmf_demos).
 
 ### Docker Containers
 
-Alternatively, you can run RMF Demos by using [docker](https://docs.docker.com/engine/install/ubuntu/).
+We also provide a [docker](https://docs.docker.com/engine/install/ubuntu/) image for Open-RMF.
 
-Pull docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
+Pull the docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 
 ```bash
 docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
@@ -192,6 +188,6 @@ Help us add to this list!
 
 A helpful starting point for integrating your fleet with RMF is the [fleet_adapter_template](https://github.com/open-rmf/free_fleet) package.
 
-## Developer and Maintenance
+## Development and Release
 
-More information for developers and maintainers can be found [here]()
+More information for on the development and release process may be found [here](docs/Development-and-Release.md)
