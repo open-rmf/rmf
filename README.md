@@ -102,6 +102,7 @@ The [rmf.repos](https://github.com/open-rmf/rmf/blob/main/rmf.repos) provides a 
 This repository stores different versions of this file depending on the ROS 2 distribution and version of the release.
 Depending on the use case, you may choose to download this file from one of the following branches in this repository:
 * `main` : Latest version of all packages which may or may not have a binary release yet. This is recommended for development and bug fixes.
+* `<distro>`: The latest version of the packages for a specific ROS 2 distro. This may be different from `main` as new API/ABI breaking features merged into `main` will not be backported into `<distro>` branches. The packages downloaded from `<distro>` may have changes that are not yet available in binaries.
 * `<distro>-release` : Where `<distro>` is a supported ROS 2 distribution (eg. `humble`). The version of packages here will correspond to those of the latest binaries available for this distro.
 * `release-<distro>-YYMMDD` : A tag for a specific `<distro>` where the version of packages correspond to those of the binaries available on `YYMMDD`. See [Releases](https://github.com/open-rmf/rmf/releases) for additional information for each release. This is useful if users would like to build packages from an older release.
 
