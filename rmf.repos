@@ -10,7 +10,7 @@ repositories:
   rmf/rmf_api_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_api_msgs.git
-    version: 0.1.0
+    version: 0.1.1
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
@@ -30,11 +30,11 @@ repositories:
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
-    version: 2.1.0
+    version: 2.1.1
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: 2.2.0
+    version: 2.2.1
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
