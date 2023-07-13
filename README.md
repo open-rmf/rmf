@@ -46,9 +46,8 @@ sudo apt update && sudo apt install \
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
+# These pip packages are only used by rmf_demos which are not released as binaries
 python3 -m pip install flask-socketio fastapi uvicorn
-
-python3 -m pip install datamodel_code_generator==0.11.19
 ```
 
 `rosdep` helps install dependencies for ROS packages across various distros and will be installed along with `ros-dev-tools`.
