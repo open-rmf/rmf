@@ -2,7 +2,7 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
-    version: 2.0.3
+    version: 2.0.4
   rmf/ament_cmake_catch2:
     type: git
     url: https://github.com/open-rmf/ament_cmake_catch2.git
@@ -26,7 +26,7 @@ repositories:
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: 2.1.6
+    version: 2.1.7
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
@@ -34,7 +34,7 @@ repositories:
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: 2.1.5
+    version: 2.1.6
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
@@ -42,7 +42,7 @@ repositories:
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
-    version: 1.6.1
+    version: 1.6.2
   rmf/rmf_utils:
     type: git
     url: https://github.com/open-rmf/rmf_utils.git
