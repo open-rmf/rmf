@@ -12,8 +12,8 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  build-base-image:
-    name: Build and push base image
+  build-image:
+    name: Build and push image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
