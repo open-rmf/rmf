@@ -32,7 +32,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          file: ./docker/rolling/Dockerfile
+          file: ./docker/rolling.Dockerfile
           push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
           tags: |
             ${{ steps.meta.outputs.tags }}

@@ -12,48 +12,14 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  build-base-image:
-    name: Build and push base image
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ros2-distro: [humble]
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ matrix.ros2-distro }}
-      - name: Log in to the Container registry
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Extract tags for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ github.repository }}/rmf-deps-${{ matrix.ros2-distro }}
-          tags: type=raw,value={{date 'YYYYMMDD'}}
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          file: ./docker/${{ matrix.ros2-distro }}/base.Dockerfile
-          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
-          tags: |
-            ${{ steps.meta.outputs.tags }}
-            ${{ github.repository }}/rmf-deps-${{ matrix.ros2-distro }}:latest
-
   build-image:
     name: Build and push image
-    needs: build-base-image
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ros2-distro: [humble]
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ matrix.ros2-distro }}
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
@@ -69,40 +35,39 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          file: ./docker/${{ matrix.ros2-distro }}/${{ matrix.ros2-distro }}.Dockerfile
+          file: ./docker/${{ matrix.ros2-distro }}.Dockerfile
           push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
           tags: |
             ${{ steps.meta.outputs.tags }}
             ${{ github.repository }}/rmf-demos-${{ matrix.ros2-distro }}:latest
 
-  # build-release-image:
-  #   name: Build and push release image
-  #   needs: build-base-image
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       ros2-distro: [humble]
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         ref: ${{ matrix.ros2-distro }}-release
-  #     - name: Log in to the Container registry
-  #       uses: docker/login-action@v3
-  #       with:
-  #         registry: ${{ env.REGISTRY }}
-  #         username: ${{ github.actor }}
-  #         password: ${{ secrets.GITHUB_TOKEN }}
-  #     - name: Extract tags for Docker
-  #       id: meta
-  #       uses: docker/metadata-action@v5
-  #       with:
-  #         images: ${{ github.repository }}/rmf-demos-${{ matrix.ros2-distro }}-release
-  #         tags: type=raw,value={{date 'YYYYMMDD'}}
-  #     - name: Build and push Docker image
-  #       uses: docker/build-push-action@v5
-  #       with:
-  #         file: ./docker/${{ matrix.ros2-distro }}/${{ matrix.ros2-distro }}-release.Dockerfile
-  #         push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
-  #         tags: |
-  #           ${{ steps.meta.outputs.tags }}
-  #           ${{ github.repository }}/rmf-demos-${{ matrix.ros2-distro }}-release:latest
+  build-release-image:
+    name: Build and push release image
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ros2-distro: [humble]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.ros2-distro }}-release
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract tags for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ github.repository }}/rmf-demos-${{ matrix.ros2-distro }}-release
+          tags: type=raw,value={{date 'YYYYMMDD'}}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          file: ./docker/${{ matrix.ros2-distro }}-release.Dockerfile
+          push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
+          tags: |
+            ${{ steps.meta.outputs.tags }}
+            ${{ github.repository }}/rmf-demos-${{ matrix.ros2-distro }}-release:latest
