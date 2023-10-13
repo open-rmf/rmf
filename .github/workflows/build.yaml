@@ -1,22 +1,39 @@
 name: build
-on:
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: '1 8 * * *'
+
+# on:
+#   pull_request:
+#     branches: [ main ]
+#   schedule:
+#     - cron: '1 8 * * *'
+
+on: push
+
+env:
+  REGISTRY: ghcr.io
+
 jobs:
-  build-docker-images:
-    name: Push Docker image to GitHub Packages
+  build-base-image:
+    name: Build and push base image
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: build rmf image and push to gh registry
-        uses: docker/build-push-action@v1
+      - uses: actions/checkout@v4
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
         with:
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/rmf_demos
-          # update registry only during push to main and nightly build
+      - name: Extract tags for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ github.repository }}/rmf-demos
+          tags: type=raw,value={{date 'YYYYMMDD'}}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          file: ./docker/rolling/base.Dockerfile
           push: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}
-          tags: latest
+          tags: |
+            ${{ steps.meta.outputs.tags }}
+            ${{ github.repository }}/rmf-demos:latest
