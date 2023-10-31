@@ -48,6 +48,9 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 
 # These pip packages are only used by rmf_demos which are not released as binaries
 python3 -m pip install flask-socketio fastapi uvicorn
+
+# Pin socketio version otherwise simple API server does not work. 
+python3 -m pip install -u python-socketio==5.7.2
 ```
 
 `rosdep` helps install dependencies for ROS packages across various distros and will be installed along with `ros-dev-tools`.
