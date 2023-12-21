@@ -50,7 +50,7 @@ wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 python3 -m pip install flask-socketio fastapi uvicorn
 
 # Pin socketio version otherwise simple API server does not work. 
-python3 -m pip install -u python-socketio==5.7.2
+python3 -m pip install -U python-socketio==5.7.2
 ```
 
 `rosdep` helps install dependencies for ROS packages across various distros and will be installed along with `ros-dev-tools`.
