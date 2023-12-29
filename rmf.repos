@@ -22,11 +22,11 @@ repositories:
   rmf/rmf_internal_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
-    version: 3.0.3
+    version: 3.0.4
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: 2.1.7
+    version: 2.1.8
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
@@ -34,11 +34,11 @@ repositories:
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: 2.1.6
+    version: 2.1.8
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
-    version: 3.0.1
+    version: 3.0.3
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
