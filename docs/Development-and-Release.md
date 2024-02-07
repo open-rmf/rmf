@@ -14,7 +14,7 @@ The development, versioning and release of Open-RMF follows that of the [ROS 2 p
 
 We require that all C++ code follows the conventions laid out [here](). `colcon test` will automatically check for deviations of style. If you'd like to have you're code autoformatted you can run the following command:
 ```
-ament_uncrustify --linelength 80 -c ~/rmf_ws/install/rmf_utils/share/rmf_utils/rmf_code_style.cfg --language C++ path/to/files
+ament_uncrustify --linelength 80 -c ~/rmf_ws/install/rmf_utils/share/rmf_utils/rmf_code_style.cfg --language C++ path/to/files --reformat
 ```
 
 ### Release
