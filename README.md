@@ -37,18 +37,7 @@ It is recommended to install ROS 2 via binary debians.
 Install all non-ROS dependencies of Open-RMF packages,
 
 ```bash
-sudo apt update && sudo apt install \
-  python3-pip \
-  curl \
-  python3-colcon-mixin \
-  ros-dev-tools \
-  -y
-
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-# These pip packages are only used by rmf_demos which are not released as binaries
-python3 -m pip install flask-socketio fastapi uvicorn
+sudo apt update && sudo apt install ros-dev-tools -y
 ```
 
 `rosdep` helps install dependencies for ROS packages across various distros and will be installed along with `ros-dev-tools`.
