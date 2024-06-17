@@ -13,11 +13,12 @@ The Open-RMF platform for multi-fleet robot management.
 
 Open-RMF is a collection of packages, some of which have ROS 2 dependencies.
 For convenience, we distribute and install Open-RMF along with ROS 2 and is currently supported for the following ROS 2 distributions:
-* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
 * [Humble Hawksbill](https://docs.ros.org/en/humble/index.html) (`humble`)
+* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
+* [Jazzy Jalisco](https://docs.ros.org/en/jazzy/index.html) (`jazzy`)
 * [Rolling Ridley](https://docs.ros.org/en/rolling/index.html) (`rolling`)
 
-We primarily support Debian packages on `Ubuntu Linux - Jammy Jellyfish (22.04)` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
+We primarily support Debian packages on `Ubuntu` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
 
 Options for installing Open-RMF:
 * [Binary installation (recommended)](#binary-installation)
@@ -26,7 +27,7 @@ Options for installing Open-RMF:
 If you want to try Open-RMF we recommend installing the binaries. Building from source is better suited for developers who wish to add new features or fix bugs.
 
 ### Setup
-Instruction below are aimed at `Ubuntu 22.04`.
+Instruction below are aimed at `Ubuntu`.
 
 First please follow the installation instructions to install ROS 2 for the `distro` of choice from supported versions listed above.
 It is recommended to install ROS 2 via binary debians.
