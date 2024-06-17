@@ -29,11 +29,6 @@ RUN vcs import src < rmf.repos \
 # Stage 2 - build
 #-----------------
 
-# compile rmf_demo_panel gui
-# use wget
-# RUN npm install --prefix src/demonstrations/rmf_demos/rmf_demos_panel/rmf_demos_panel/static/ \
-  # && npm run build --prefix src/demonstrations/rmf_demos/rmf_demos_panel/rmf_demos_panel/static/
-
 # colcon compilation
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
   && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
