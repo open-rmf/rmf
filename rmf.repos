@@ -2,68 +2,68 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
-    version: jazzy
+    version: 2.3.0
   rmf/ament_cmake_catch2:
     type: git
     url: https://github.com/open-rmf/ament_cmake_catch2.git
-    version: jazzy
+    version: 1.4.1
   rmf/rmf_api_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_api_msgs.git
-    version: jazzy
+    version: 0.3.1
   rmf/rmf_battery:
     type: git
     url: https://github.com/open-rmf/rmf_battery.git
-    version: jazzy
+    version: 0.3.1
   rmf/rmf_building_map_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_building_map_msgs.git
-    version: jazzy
+    version: 1.4.1
   rmf/rmf_internal_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_internal_msgs.git
-    version: jazzy
+    version: 3.3.1
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: jazzy
+    version: 2.7.2
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
-    version: jazzy
+    version: 2.3.2
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: jazzy
+    version: 2.5.1
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
-    version: jazzy
+    version: 3.3.3
   rmf/rmf_traffic_editor:
     type: git
     url: https://github.com/open-rmf/rmf_traffic_editor.git
-    version: jazzy
+    version: 1.9.1
   rmf/rmf_utils:
     type: git
     url: https://github.com/open-rmf/rmf_utils.git
-    version: jazzy
+    version: 1.6.2
   rmf/rmf_visualization:
     type: git
     url: https://github.com/open-rmf/rmf_visualization.git
-    version: jazzy
+    version: 2.3.2
   rmf/rmf_visualization_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_visualization_msgs.git
-    version: jazzy
+    version: 1.4.1
   thirdparty/menge_vendor:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
-    version: master
+    version: 1.2.1
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
     url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
-    version: jazzy
+    version: 0.4.1
   thirdparty/pybind11_json_vendor:
     type: git
     url: https://github.com/open-rmf/pybind11_json_vendor.git
-    version: jazzy
+    version: 0.4.2
