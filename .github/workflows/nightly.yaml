@@ -11,7 +11,7 @@ jobs:
       - name: deps
         uses: ros-tooling/setup-ros@v0.7
         with:
-          required-ros-distributions: rolling
+          required-ros-distributions: jazzy
       - name: setup clang
         run: |
           sudo apt update && sudo apt install -y clang lldb lld
@@ -23,7 +23,7 @@ jobs:
           QT_QPA_PLATFORM: offscreen
           PIP_BREAK_SYSTEM_PACKAGES: 1
         with:
-          target-ros2-distro: rolling
+          target-ros2-distro: jazzy
           # build all packages listed in the meta package
           package-name: |
             rmf_utils

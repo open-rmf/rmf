@@ -2,7 +2,7 @@
 # Stage 1 - Dependencies
 #-----------------------
 
-FROM ros:rolling AS builder
+FROM ros:jazzy AS builder
 
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 RUN apt-get update && apt-get install -y ros-dev-tools
