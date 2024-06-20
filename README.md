@@ -13,11 +13,12 @@ The Open-RMF platform for multi-fleet robot management.
 
 Open-RMF is a collection of packages, some of which have ROS 2 dependencies.
 For convenience, we distribute and install Open-RMF along with ROS 2 and is currently supported for the following ROS 2 distributions:
-* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
 * [Humble Hawksbill](https://docs.ros.org/en/humble/index.html) (`humble`)
+* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
+* [Jazzy Jalisco](https://docs.ros.org/en/jazzy/index.html) (`jazzy`)
 * [Rolling Ridley](https://docs.ros.org/en/rolling/index.html) (`rolling`)
 
-We primarily support Debian packages on `Ubuntu Linux - Jammy Jellyfish (22.04)` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
+We primarily support Debian packages on `Ubuntu` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
 
 Options for installing Open-RMF:
 * [Binary installation (recommended)](#binary-installation)
@@ -26,7 +27,7 @@ Options for installing Open-RMF:
 If you want to try Open-RMF we recommend installing the binaries. Building from source is better suited for developers who wish to add new features or fix bugs.
 
 ### Setup
-Instruction below are aimed at `Ubuntu 22.04`.
+Instruction below are aimed at `Ubuntu`.
 
 First please follow the installation instructions to install ROS 2 for the `distro` of choice from supported versions listed above.
 It is recommended to install ROS 2 via binary debians.
@@ -36,18 +37,7 @@ It is recommended to install ROS 2 via binary debians.
 Install all non-ROS dependencies of Open-RMF packages,
 
 ```bash
-sudo apt update && sudo apt install \
-  python3-pip \
-  curl \
-  python3-colcon-mixin \
-  ros-dev-tools \
-  -y
-
-sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-# These pip packages are only used by rmf_demos which are not released as binaries
-python3 -m pip install flask-socketio fastapi uvicorn
+sudo apt update && sudo apt install ros-dev-tools -y
 ```
 
 `rosdep` helps install dependencies for ROS packages across various distros and will be installed along with `ros-dev-tools`.
@@ -168,7 +158,7 @@ Run it!
 docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
 
-This will run `rmf_demos` in headless mode. Open [this link](https://open-rmf.github.io/rmf-panel-js/) with a browser to start a task.
+This will run `rmf_demos` in headless mode.
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
