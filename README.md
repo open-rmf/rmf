@@ -110,11 +110,12 @@ wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
 vcs import src < rmf.repos
 ```
 
-Install dependencies via `rosdep`.
+Update your rosdep definitions and install dependencies via `rosdep`.
 Replace `humble` with ROS 2 distro of your choice.
 
 ```bash
 cd ~/rmf_ws
+rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro humble -y
 ```
 
