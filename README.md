@@ -111,10 +111,11 @@ vcs import src < rmf.repos
 ```
 
 Update your rosdep definitions and install dependencies via `rosdep`.
-Replace `humble` with ROS 2 distro of your choice.
+Replace `$ROS_DISTRO` with ROS 2 distro of your choice.
 
 ```bash
 cd ~/rmf_ws
+sudo apt update
 rosdep update
 # source your preferred ROS distribution. Eg: `source /opt/ros/rolling/setup.bash`
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
