@@ -116,7 +116,8 @@ Replace `humble` with ROS 2 distro of your choice.
 ```bash
 cd ~/rmf_ws
 rosdep update
-rosdep install --from-paths src --ignore-src --rosdistro humble -y
+# source your preferred ROS distribution. Eg: `source /opt/ros/rolling/setup.bash`
+rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
 **NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
