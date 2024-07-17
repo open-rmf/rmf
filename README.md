@@ -111,13 +111,12 @@ vcs import src < rmf.repos
 ```
 
 Update your rosdep definitions and install dependencies via `rosdep`.
-Replace `$ROS_DISTRO` with ROS 2 distro of your choice.
 
 ```bash
 cd ~/rmf_ws
 sudo apt update
 rosdep update
-# source your preferred ROS distribution. Eg: `source /opt/ros/rolling/setup.bash`
+source /opt/ros/humble/setup.bash # replace humble with preferred ROS 2 distro.
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
@@ -132,8 +131,6 @@ Compile the workspace after sourcing the ROS 2 distro of choice.
 
 ```bash
 cd ~/rmf_ws
-source /opt/ros/humble/setup.bash # replace humble with ROS 2 distro of choice.
-
 export CXX=clang++
 export CC=clang
 colcon build --mixin release lld
