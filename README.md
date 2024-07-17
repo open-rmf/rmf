@@ -110,12 +110,14 @@ wget https://raw.githubusercontent.com/open-rmf/rmf/main/rmf.repos
 vcs import src < rmf.repos
 ```
 
-Install dependencies via `rosdep`.
-Replace `humble` with ROS 2 distro of your choice.
+Update your rosdep definitions and install dependencies via `rosdep`.
 
 ```bash
 cd ~/rmf_ws
-rosdep install --from-paths src --ignore-src --rosdistro humble -y
+sudo apt update
+rosdep update
+source /opt/ros/humble/setup.bash # replace humble with preferred ROS 2 distro.
+rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
 **NOTE: We strongly recommend compiling Open-RMF packages with `clang` as compiler and `lld` as linker.**
@@ -129,8 +131,6 @@ Compile the workspace after sourcing the ROS 2 distro of choice.
 
 ```bash
 cd ~/rmf_ws
-source /opt/ros/humble/setup.bash # replace humble with ROS 2 distro of choice.
-
 export CXX=clang++
 export CC=clang
 colcon build --mixin release lld
