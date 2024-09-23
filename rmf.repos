@@ -30,7 +30,7 @@ repositories:
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
-    version: main
+    version: aaron/skippable-building-plugins
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
