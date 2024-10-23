@@ -180,7 +180,9 @@ A number of commercial robots, infrastructure systems, workcells and devices hav
 
 Help us add to this list!
 
-A helpful starting point for integrating your fleet with RMF is the [fleet_adapter_template](https://github.com/open-rmf/free_fleet) package.
+A helpful starting point for integrating your fleet with RMF is the [fleet_adapter_template](https://github.com/open-rmf/fleet_adapter_template).
+
+If your robot/fleet exposes native ROS navigation endpoints, it can be readily integrated with [free_fleet](https://github.com/open-rmf/free_fleet).
 
 ## Development and Release
 
