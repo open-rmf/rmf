@@ -67,7 +67,7 @@ jobs:
             }
           colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
       - name: Upload build logs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: colcon-build-logs
           path: ${{ steps.action_ros_ci_step.outputs.ros-workspace-directory-name }}/log
