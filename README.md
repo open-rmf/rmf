@@ -158,6 +158,13 @@ If you do not have the models already then download the models locally to your H
 Run it
 Replace /Location/To/Your/Models - With your actual location 
 Alternatively, you can use the `docker cp` command to copy the folder into the Docker container. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
+If you do not have the models already then download the models locally to your Host system from 
+
+[Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
+
+Run it
+Replace /Location/To/Your/Models - With your actual location 
+Alternatively, you can use the `docker cp` command to copy the folder into the Docker container. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
 
 ```bash
 
