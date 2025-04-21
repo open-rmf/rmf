@@ -151,18 +151,27 @@ docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
 docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
 ```
 
+Run it!
+
+```bash
+
+docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
+```
+
+This will run `rmf_demos` in headless mode.
+
+
 If you do not have the models already then download the models locally to your Host system from 
 
 [Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
 
-Run it!
 Replace /Location/To/Your/Models - With your actual location 
 Alternatively, you can use the `docker cp` command to copy the folder into the Docker container. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
 If you do not have the models already then download the models locally to your Host system from 
 
 [Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
 
-Run it
+Run this
 Replace /Location/To/Your/Models - With your actual location 
 Alternatively, you can use the `docker cp` command to copy the folder into the Docker container. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
 
@@ -170,8 +179,6 @@ Alternatively, you can use the `docker cp` command to copy the folder into the D
 
 docker run -v /Location/To/Your/Models/OpenRobotics:/root/.gazebo/models -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
-
-This will run `rmf_demos` in headless mode.
 
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
