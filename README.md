@@ -160,13 +160,6 @@ docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 l
 
 This will run `rmf_demos` in headless mode.
 
-
-If you do not have the models already then download the models locally to your Host system from 
-
-[Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
-
-Replace /Location/To/Your/Models - With your actual location 
-Alternatively, you can use the `docker cp` command to copy the folder into the Docker container. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
 If you do not have the models already then download the models locally to your Host system from 
 
 [Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
