@@ -14,8 +14,8 @@ The Open-RMF platform for multi-fleet robot management.
 Open-RMF is a collection of packages, some of which have ROS 2 dependencies.
 For convenience, we distribute and install Open-RMF along with ROS 2 and is currently supported for the following ROS 2 distributions:
 * [Humble Hawksbill](https://docs.ros.org/en/humble/index.html) (`humble`)
-* [Iron Irwini](https://docs.ros.org/en/iron/index.html) (`iron`)
 * [Jazzy Jalisco](https://docs.ros.org/en/jazzy/index.html) (`jazzy`)
+* [Kilted Kaiju](https://docs.ros.org/en/kilted/index.html) (`kilted`)
 * [Rolling Ridley](https://docs.ros.org/en/rolling/index.html) (`rolling`)
 
 We primarily support Debian packages on `Ubuntu` and select RPM packages for `RHEL/Fedora` for both `amd64` and `aarch64` architectures.
