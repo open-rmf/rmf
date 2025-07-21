@@ -4,6 +4,7 @@
 
 ![](https://github.com/open-rmf/rmf/workflows/build/badge.svg)
 ![Nightly](https://github.com/open-rmf/rmf/workflows/nightly/badge.svg)
+[![](https://img.shields.io/badge/discourse-forum-blue.svg)](https://discourse.openrobotics.org/c/open-rmf/101)
 
 The Open-RMF platform for multi-fleet robot management.
 
@@ -142,20 +143,20 @@ To run some demonstrations of Open-RMF in simulation, see [README in rmf_demos](
 
 ### Docker Containers
 
-We also provide a [docker](https://docs.docker.com/engine/install/ubuntu/) image for Open-RMF.
+We also provide a [docker](https://docs.docker.com/engine/install/ubuntu/) image for Open-RMF, source built of `main` in various ROS 2 distributions.
 
 Pull the docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 
 ```bash
-docker pull ghcr.io/open-rmf/rmf/rmf_demos:latest
-docker tag ghcr.io/open-rmf/rmf/rmf_demos:latest rmf:latest
+docker pull ghcr.io/open-rmf/rmf/rmf_demos:jazzy-rmf-latest
+docker tag ghcr.io/open-rmf/rmf/rmf_demos:jazzy-rmf-latest rmf:jazzy-rmf-latest
+# change to rolling-rmf-latest or other ROS 2 distributions as needed
 ```
 
 Run it!
 
 ```bash
-
-docker run -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
+docker run -it --network host rmf:jazzy-rmf-latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
 ```
 
 This will run `rmf_demos` in headless mode.
