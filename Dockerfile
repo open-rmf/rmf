@@ -2,7 +2,7 @@ ARG ROS_DISTRO=jazzy
 ARG BASE_IMAGE=ros:$ROS_DISTRO-ros-base
 FROM $BASE_IMAGE
 
-RUN apt-get update && apt-get install -y ros-dev-tools
+RUN apt-get update && apt-get install -y ros-dev-tools ros-$ROS_DISTRO-rmw-cyclonedds-cpp ros-$ROS_DISTRO-rmw-zenoh-cpp
 
 RUN mkdir -p /rmf_demos_ws/src
 WORKDIR /rmf_demos_ws
