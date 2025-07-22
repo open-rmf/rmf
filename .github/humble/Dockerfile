@@ -10,7 +10,7 @@ WORKDIR /rmf_demos_ws
 RUN rosdep update --rosdistro $ROS_DISTRO
 
 ENV DEBIAN_FRONTEND=noninteractive
-COPY .github/humble/rmf.repos rmf.repos
+COPY rmf.repos rmf.repos
 RUN vcs import src < rmf.repos \
     && apt-get update \
     && apt-get upgrade -y \
