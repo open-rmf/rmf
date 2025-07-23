@@ -1,3 +1,7 @@
+# This docker image is only specific to building rmf:main on ROS 2 Humble,
+# using a custom rmf.repos file, and contains various steps that are no longer
+# necessary for ROS 2 Jazzy onwards.
+
 ARG ROS_DISTRO=humble
 ARG BASE_IMAGE=ros:$ROS_DISTRO-ros-base
 FROM $BASE_IMAGE
