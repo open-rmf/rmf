@@ -143,7 +143,10 @@ To run some demonstrations of Open-RMF in simulation, see [README in rmf_demos](
 
 ### Docker Containers
 
-We also provide a [docker](https://docs.docker.com/engine/install/ubuntu/) image for Open-RMF, source built of `main` in various ROS 2 distributions.
+We provide [docker images](https://github.com/open-rmf/rmf/pkgs/container/rmf%2Frmf_demos) for Open-RMF, source built of `main` in various ROS 2 distributions nightly. These docker images may be used for containerized testing or as underlays for further development and testing.
+
+> [!WARNING]
+> These docker images are built off of `main` nightly and hence might encounter breakages as expected of `main` or `rolling`. This is especially the case for past ROS 2 distributions, for example Humble. To ensure consistent behaviors (e.g. for deployments), make sure to use the specific hash/version of an image that has been verified to be working, instead of `latest` images.
 
 Pull the docker image from `open-rmf/rmf` github registry (setup refer [here](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-with-a-personal-access-token)).
 
