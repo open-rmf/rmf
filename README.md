@@ -164,6 +164,19 @@ docker run -it --network host rmf:jazzy-rmf-latest bash -c "export ROS_DOMAIN_ID
 
 This will run `rmf_demos` in headless mode.
 
+If you do not have the models already then download the models locally to your Host system from 
+
+[Gazebo Sim Dashboard](https://app.gazebosim.org/dashboard)
+
+Run this
+Replace /Location/To/Your/Models - With your actual location.
+Alternatively, you can use the `docker cp` command to copy the folder permanently into the Docker container instead of just mounting it temporarily using `-v`. For more information on how to use the `docker cp` command, refer to the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cp/). 
+
+```bash
+
+docker run -v /Location/To/Your/Models/OpenRobotics:/root/.gazebo/models -it --network host rmf:latest bash -c "export ROS_DOMAIN_ID=9; ros2 launch rmf_demos_gz office.launch.xml headless:=1"
+```
+
 (Experimental) User can also run `rmf_demos` in “non-headless” graphical form, via [rocker](https://github.com/osrf/rocker).
 
 ## Run RMF Demos
