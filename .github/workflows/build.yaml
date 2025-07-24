@@ -33,8 +33,15 @@ jobs:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         ros_distribution: ["jazzy", "kilted", "rolling"]
+        include:
+          - repos_file: rmf.repos
+          - ros_distribution: kilted
+            repos_file: rmf-kilted-latest.repos
+          - ros_distribution: jazzy
+            repos_file: rmf-jazzy-latest.repos
     steps:
       - uses: actions/checkout@v4
       - name: Set up Docker Buildx
@@ -51,6 +58,6 @@ jobs:
           push: true
           build-args: |
             ROS_DISTRO=${{ matrix.ros_distribution }}
-            REPOS_FILE="rmf-${{ matrix.ros_distribution }}-latest.repos"
+            REPOS_FILE=${{ matrix.repos_file }}
           tags: ghcr.io/${{ github.repository }}/rmf_demos:${{ matrix.ros_distribution }}-rmf-latest
           context: .
