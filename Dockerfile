@@ -3,8 +3,6 @@ ARG BASE_IMAGE=ros:${ROS_DISTRO}-ros-base
 FROM $BASE_IMAGE
 ARG REPOS_FILE=rmf.repos
 
-RUN echo ${REPOS_FILE}
-
 RUN apt-get update && apt-get install -y ros-dev-tools ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-rmw-zenoh-cpp
 
 RUN mkdir -p /rmf_demos_ws/src
