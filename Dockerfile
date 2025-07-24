@@ -1,4 +1,5 @@
 ARG ROS_DISTRO=jazzy
+ARG REPOS_FILE=rmf.repos
 ARG BASE_IMAGE=ros:$ROS_DISTRO-ros-base
 FROM $BASE_IMAGE
 
@@ -9,7 +10,7 @@ WORKDIR /rmf_demos_ws
 RUN rosdep update --rosdistro $ROS_DISTRO
 
 ENV DEBIAN_FRONTEND=noninteractive
-COPY rmf.repos rmf.repos
+COPY $REPOS_FILE rmf.repos
 RUN vcs import src < rmf.repos \
     && apt-get update \
     && apt-get upgrade -y \
