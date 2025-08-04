@@ -1,7 +1,6 @@
 ARG ROS_DISTRO=jazzy
 ARG BASE_IMAGE=ros:${ROS_DISTRO}-ros-base
 FROM $BASE_IMAGE
-ARG REPOS_FILE=rmf.repos
 
 RUN apt-get update && apt-get install -y ros-dev-tools ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-rmw-zenoh-cpp
 
@@ -10,7 +9,7 @@ WORKDIR /rmf_demos_ws
 RUN rosdep update --rosdistro ${ROS_DISTRO}
 
 ENV DEBIAN_FRONTEND=noninteractive
-COPY ${REPOS_FILE} rmf.repos
+COPY rmf.repos rmf.repos
 RUN vcs import src < rmf.repos \
     && apt-get update \
     && apt-get upgrade -y \
