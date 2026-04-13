@@ -26,6 +26,14 @@ To make changes to protected branches, follow these steps:
 * All GitHub CI tests must pass for the Pull Request
 * At least one reviewer with "approval access" (who is not also the author of the PR) must approve the PR
 * The PR gets squash-merged
+  * The "commit message" should be the title of the PR along with the PR number `(#__)` at the end, which GitHub does by default.
+  * For the "Extended description", delete all prior commit messages, retaining only important long-form information about the PR *as needed*. Also include any instances of these three special lines:
+    * `Signed-off-by: _`
+    * `Co-authored-by: _`
+    * `Generated-by: _`
+  * Delete any perfect duplicates of these special lines.
+  * If the author declared any use of GenAI in their PR description, add a `Generated-by: _` line if it's not in the description already.
+  * Check if the author mentioned any other declarations that they want included in the description, e.g. `Funded-by: _`.
 
 Besides having write access, Committers also have "approval access" for their designated repos, which means their reviews can satisfy the approval requirement.
 
