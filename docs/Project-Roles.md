@@ -11,6 +11,8 @@ Within the project, there are three distinct roles:
 
 ### Project Committer
 
+[🌟 Overview Slides 🌟](https://docs.google.com/presentation/d/1RgzM1AvUcNSowQeFGUqAUNMGWBR0QVXb-sYdcLBTLok/edit?usp=sharing)
+
 Project Committers (hereafter "Committers") have write and approval access to one or more code repositories for the project.
 The selection of repos that a Committer has privileged access to will be determined by the PMC based on that Committer's history of contributions to the project.
 When a Committer has demonstrated sufficient credibility on the subject matter and code base of a certain repo of the project, they may be granted privileged access to that project by the PMC.
