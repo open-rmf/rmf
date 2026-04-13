@@ -2,6 +2,8 @@
 
 The development, versioning and release of Open-RMF follows that of the [ROS 2 project](https://docs.ros.org/en/rolling/).
 
+These practices should be followed by anyone that has an [official role](https://github.com/open-rmf/rmf/blob/main/docs/Project-Roles.md) in the Open-RMF project.
+
 ### Development and versioning
 * The primary development branch is `main` on all repositories. This is the equivalent to `rolling` in ROS 2. Any `rolling` branches in Open-RMF repos should be ignored as they exist purely for legacy reasons.
 * Repositories also have ROS 2 distro branches, eg., `humble`, containing versions of the packages distributed as a binary for that distro.

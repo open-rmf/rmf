@@ -65,6 +65,8 @@ If that is not sufficient to resolve the concerns, the PMC would likely conduct 
 It should be noted that the OSRA is currently considering the possibility of a maximum idle period where a Committer would automatically lose their status after a specific prolonged period of inactivity, with the option to renew their status at any time once their availibility allows it.
 No decision has been made on this, but the Open-RMF project will follow the guidelines set out by the OSRA.
 
+For more information on how to carry out these responsibilities, please refer to the [Development and Release](https://github.com/open-rmf/rmf/blob/main/docs/Development-and-Release.md) page.
+
 #### Becoming a Committer
 
 The formal process for becoming a Committer is laid out in Article 7.8 of [the project charter](https://osralliance.org/wp-content/uploads/2024/03/open-rmf-project-charter.pdf).
