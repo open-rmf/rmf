@@ -84,6 +84,8 @@ The PMC has regular meetings (currently this is once every two weeks) to synchro
 While most PMC meetings are open to the public, PMC members are generally *expected* to attend---barring any scheduling conflict.
 Project Committers who are not PMC members are encouraged to attend, but it is not a basic expectation of the Committer role.
 
+The schedule of the PMC meeting as well as how to access it are given on the [Official Recurring Project Events post](https://discourse.openrobotics.org/t/official-recurring-project-events/50733).
+
 For Open-RMF, PMC members are always Committers, and typically have privileged Committer access to all repos belonging to the project.
 They carry all the responsibilities and expectations of a Committer, but additionally are expected to participate in formal decisions and help shape the roadmap of the project.
 
