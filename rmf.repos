@@ -62,7 +62,7 @@ repositories:
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
     url: https://github.com/russkel/nlohmann_json_schema_validator_vendor
-    version: feature/update-to-latest
+    version: main
   thirdparty/pybind11_json_vendor:
     type: git
     url: https://github.com/open-rmf/pybind11_json_vendor
