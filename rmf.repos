@@ -2,7 +2,7 @@ repositories:
   demonstrations/rmf_demos:
     type: git
     url: https://github.com/open-rmf/rmf_demos.git
-    version: main
+    version: lyrical_compatibility
   rmf/ament_cmake_catch2:
     type: git
     url: https://github.com/open-rmf/ament_cmake_catch2.git
@@ -26,15 +26,15 @@ repositories:
   rmf/rmf_ros2:
     type: git
     url: https://github.com/open-rmf/rmf_ros2.git
-    version: main
+    version: lyrical_compatibility
   rmf/rmf_simulation:
     type: git
     url: https://github.com/open-rmf/rmf_simulation.git
-    version: main
+    version: lyrical_compatibility
   rmf/rmf_task:
     type: git
     url: https://github.com/open-rmf/rmf_task.git
-    version: main
+    version: lyrical_compatibility
   rmf/rmf_traffic:
     type: git
     url: https://github.com/open-rmf/rmf_traffic.git
@@ -50,7 +50,7 @@ repositories:
   rmf/rmf_visualization:
     type: git
     url: https://github.com/open-rmf/rmf_visualization.git
-    version: main
+    version: luca/floorplan_rolling
   rmf/rmf_visualization_msgs:
     type: git
     url: https://github.com/open-rmf/rmf_visualization_msgs.git
@@ -61,5 +61,9 @@ repositories:
     version: master
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
-    url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor.git
+    url: https://github.com/russkel/nlohmann_json_schema_validator_vendor
+    version: feature/update-to-latest
+  thirdparty/pybind11_json_vendor:
+    type: git
+    url: https://github.com/open-rmf/pybind11_json_vendor
     version: main
