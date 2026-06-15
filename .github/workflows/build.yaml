@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '1 8 * * *'
 jobs:
-  build-humble-docker-image:
+  build-backported-docker-image:
     name: Push Docker image for ROS 2 Humble to GitHub Packages
     runs-on: ubuntu-latest
     strategy:
@@ -28,14 +28,14 @@ jobs:
           build-args: |
             ROS_DISTRO=${{ matrix.ros_distribution }}
           tags: ghcr.io/${{ github.repository }}/rmf_demos:${{ matrix.ros_distribution }}-rmf-latest
-          context: .github/humble
+          context: .github/${{ matrix.ros_distribution }}
   build-docker-images:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        ros_distribution: ["jazzy", "kilted", "rolling"]
+        ros_distribution: ["jazzy", "lyrical", "rolling"]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Docker Buildx
