@@ -1,4 +1,4 @@
-ARG ROS_DISTRO=jazzy
+ARG ROS_DISTRO=lyrical
 ARG BASE_IMAGE=ros:${ROS_DISTRO}-ros-base
 FROM $BASE_IMAGE
 
