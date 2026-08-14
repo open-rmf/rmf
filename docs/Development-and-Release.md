@@ -20,6 +20,7 @@ ament_uncrustify --linelength 80 -c ~/rmf_ws/install/rmf_utils/share/rmf_utils/r
 ```
 
 ### Release
+* To enable new maintainers to perform releases of Open-RMF repos, open a PR to change [rmf.tf](https://github.com/ros2-gbp/ros2-gbp-github-org/blob/latest/rmf.tf) according to [the contribution guidelines of ros2-gbp](https://github.com/ros2-gbp/ros2-gbp-github-org/blob/latest/CONTRIBUTING.md).
 * Open-RMF binaries for new ROS 2 distributions will be available along with the new release of ROS 2.
 * Roughly monthly, patch releases for packages with changes will be available in source and binary forms. All releases will be announced [here](https://github.com/open-rmf/rmf/releases)
   * Source releases are in the form of a [tagged rmf.repos](https://github.com/open-rmf/rmf/blob/release-humble-230606/rmf.repos) file. The least `rmf.repos` file in `<distro>-release` branches contain the latest tags for all the repos for that `<distro>`. The `release-<distro>-YYMMDD` tags are useful for checking out packages to particular release versions.
