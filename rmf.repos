@@ -58,7 +58,7 @@ repositories:
   thirdparty/menge_vendor:
     type: git
     url: https://github.com/open-rmf/menge_vendor.git
-    version: master
+    version: lyrical
   thirdparty/nlohmann_json_schema_validator_vendor:
     type: git
     url: https://github.com/open-rmf/nlohmann_json_schema_validator_vendor
